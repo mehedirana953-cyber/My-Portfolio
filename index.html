@@ -86,11 +86,32 @@ section{padding:110px 0}
 .tag{color:var(--accent);font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700}
 .project h3{font-family:"Space Grotesk";font-size:20px;margin:8px 0}
 .project p{color:var(--muted);font-size:14px}
+
+/* Other Experience Section Styling */
+.experience-list{display:flex;flex-direction:column;gap:16px;margin-top:45px}
+.exp-card{border:1px solid #292929;border-radius:20px;padding:24px 30px;background:linear-gradient(145deg,#111,#0d0d0d);display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:.3s}
+.exp-card:hover{border-color:var(--accent);background:#141414;transform:translateX(6px)}
+.exp-title{font-family:"Space Grotesk";font-size:20px;font-weight:600;color:#f4f4f4;display:flex;align-items:center;gap:12px}
+.exp-icon{width:36px;height:36px;border-radius:50%;background:rgba(119,255,53,.1);border:1px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-size:14px;flex-shrink:0}
+.exp-arrow{color:var(--accent);font-size:20px;transition:.3s}
+.exp-card:hover .exp-arrow{transform:translateX(5px)}
+
+/* Modal / Popup Styling */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.active{display:flex}
+.modal-box{background:#111;border:1px solid #333;border-radius:28px;max-width:650px;width:100%;padding:40px;position:relative;box-shadow:0 25px 50px rgba(0,0,0,.8);animation:modalIn .3s cubic-bezier(0.16, 1, 0.3, 1)}
+@keyframes modalIn{from{opacity:0;transform:scale(.95) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal-close{position:absolute;top:20px;right:25px;background:none;border:none;color:#888;font-size:28px;cursor:pointer;transition:.2s}
+.modal-close:hover{color:var(--accent)}
+.modal-title{font-family:"Space Grotesk";font-size:26px;color:var(--accent);margin-bottom:18px;padding-right:20px}
+.modal-desc{color:#d0d0d0;font-size:16px;line-height:1.7;margin-bottom:24px}
+.modal-keywords{display:flex;flex-wrap:wrap;gap:8px}
+.modal-kw{background:#1c1c1c;border:1px solid #333;border-radius:999px;padding:6px 14px;font-size:12px;color:var(--accent2)}
+
 .process{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:45px}
 .step{padding:24px;border-top:1px solid #3a3a3a}
 .step-no{color:var(--accent);font-family:"Space Grotesk";font-size:14px}.step h3{margin:32px 0 8px;font-family:"Space Grotesk";font-size:21px}.step p{color:var(--muted);font-size:14px}
 
-/* Enhanced Tools Grid styling */
 .tools{display:flex;flex-wrap:wrap;gap:12px;margin-top:35px}
 .tool{border:1px solid #2b2b2b;background:#0d0d0d;padding:12px 20px;border-radius:999px;color:#d0d0d0;font-size:14px;font-weight:500;transition:.25s;display:inline-flex;align-items:center;gap:6px}
 .tool:hover{border-color:var(--accent);color:#fff;background:#141414;transform:translateY(-2px)}
@@ -119,6 +140,8 @@ section{padding:110px 0}
   section{padding:78px 0}.services-grid,.work-grid,.process{grid-template-columns:1fr}
   .expertise{grid-template-columns:1fr}
   .cta-box{padding:42px 25px}.footer{flex-direction:column}
+  .exp-card{padding:18px 20px}
+  .modal-box{padding:28px 20px}
 }
 </style>
 </head>
@@ -131,6 +154,7 @@ section{padding:110px 0}
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#work">Work</a>
+      <a href="#other-experience">Other Experience</a>
       <a href="#process">Process</a>
       <a class="nav-btn" href="#contact">Let's Talk</a>
     </div>
@@ -280,6 +304,68 @@ section{padding:110px 0}
   </div>
 </section>
 
+<!-- NEW: OTHER EXPERIENCES SECTION -->
+<section id="other-experience">
+  <div class="container">
+    <div class="section-kicker reveal">Specialized Expertise</div>
+    <h2 class="section-title reveal">Other Experiences<br><em style="color:var(--accent)">click to view details.</em></h2>
+    
+    <div class="experience-list reveal">
+      
+      <div class="exp-card" data-exp="0">
+        <div class="exp-title"><span class="exp-icon">01</span> Meta Ads Specialist | Facebook & Instagram Advertising</div>
+        <span class="exp-arrow">↗</span>
+      </div>
+
+      <div class="exp-card" data-exp="1">
+        <div class="exp-title"><span class="exp-icon">02</span> TikTok Ads Specialist</div>
+        <span class="exp-arrow">↗</span>
+      </div>
+
+      <div class="exp-card" data-exp="2">
+        <div class="exp-title"><span class="exp-icon">03</span> Professional Video Editor | Adobe Premiere Pro & CapCut Pro</div>
+        <span class="exp-arrow">↗</span>
+      </div>
+
+      <div class="exp-card" data-exp="3">
+        <div class="exp-title"><span class="exp-icon">04</span> Canva Graphic Designer & Video Editing Specialist</div>
+        <span class="exp-arrow">↗</span>
+      </div>
+
+      <div class="exp-card" data-exp="4">
+        <div class="exp-title"><span class="exp-icon">05</span> Social Media Marketing Consultant</div>
+        <span class="exp-arrow">↗</span>
+      </div>
+
+      <div class="exp-card" data-exp="5">
+        <div class="exp-title"><span class="exp-icon">06</span> TikTok & Instagram Growth Specialist</div>
+        <span class="exp-arrow">↗</span>
+      </div>
+
+      <div class="exp-card" data-exp="6">
+        <div class="exp-title"><span class="exp-icon">07</span> Video Editor & Short-Form Content Specialist</div>
+        <span class="exp-arrow">↗</span>
+      </div>
+
+      <div class="exp-card" data-exp="7">
+        <div class="exp-title"><span class="exp-icon">08</span> Content Creator & Social Media Manager</div>
+        <span class="exp-arrow">↗</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- POPUP MODAL COMPONENT -->
+<div class="modal-overlay" id="expModal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <h3 class="modal-title" id="mTitle">Title Here</h3>
+    <p class="modal-desc" id="mDesc">Description here</p>
+    <div class="modal-keywords" id="mKw"></div>
+  </div>
+</div>
+
 <section id="process">
   <div class="container">
     <div class="section-kicker reveal">04 / Process</div>
@@ -298,7 +384,6 @@ section{padding:110px 0}
     <div class="section-kicker reveal">05 / Tools</div>
     <h2 class="section-title reveal">Built with the tools<br>modern brands use.</h2>
     
-    <!-- Expanded & Organized Tools Section -->
     <div class="tools reveal">
       <span class="tool">Canva Pro</span>
       <span class="tool">CapCut Pro</span>
@@ -367,6 +452,89 @@ const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 menuToggle.addEventListener('click', ()=>{
   navLinks.classList.toggle('active');
+});
+
+// Experience Modal Data & Logic
+const expData = [
+  {
+    title: "Meta Ads Specialist | Facebook & Instagram Advertising",
+    desc: "As a dedicated Meta Ads Specialist, I design and manage high-converting ad campaigns across Facebook and Instagram tailored to maximize your ROI. From setting up Meta Pixel and custom audience targeting to scaling sales, lead generation, and remarketing campaigns, I bring a performance-driven approach that turns ad spend into consistent business growth.",
+    keywords: ["Meta Ads Specialist", "Facebook Ads", "Instagram Ads", "Audience Targeting", "Meta Pixel", "Lead Generation", "Retargeting", "A/B Testing", "eCommerce Ads", "Shopify Ads"]
+  },
+  {
+    title: "TikTok Ads Specialist",
+    desc: "I specialize in creating high-converting TikTok ad campaigns that leverage viral video formats and smart audience targeting. By combining creative strategy with TikTok Business Center tools, I build Spark Ads and video conversion campaigns that boost brand awareness, lower acquisition costs, and drive predictable sales for eCommerce brands.",
+    keywords: ["TikTok Advertising", "Spark Ads", "TikTok Pixel", "Conversion Campaigns", "Creative Strategy", "Product Catalog Ads", "Campaign Scaling", "Growth Marketing"]
+  },
+  {
+    title: "Professional Video Editor | Adobe Premiere Pro & CapCut Pro",
+    desc: "I offer full-suite video post-production services using Adobe Premiere Pro and CapCut Pro. Specializing in short-form content like Instagram Reels, TikToks, and YouTube Shorts, I craft visual stories with dynamic motion graphics, sound design, color grading, and engaging captions designed to hold attention and drive high organic engagement.",
+    keywords: ["Adobe Premiere Pro", "CapCut Pro", "Reels Editing", "TikTok Video Editing", "Motion Graphics", "Color Grading", "Sound Design", "Speed Ramping", "UGC Video Editing"]
+  },
+  {
+    title: "Canva Graphic Designer & Video Editing Specialist",
+    desc: "I create stunning visual assets and editable Canva templates that keep your brand looking cohesive and professional across all channels. From high-converting carousel posts, YouTube thumbnails, and digital ads to full brand kits and marketing materials, I deliver high-quality designs fast and efficiently.",
+    keywords: ["Canva Pro", "Carousel Design", "Social Media Graphics", "Brand Identity", "Pitch Deck Design", "Digital Ads Design", "Editable Templates", "Visual Branding"]
+  },
+  {
+    title: "Social Media Marketing Consultant",
+    desc: "I help brands cut through the noise with data-backed social media strategies. Through deep competitor analysis, market positioning, and detailed analytics reporting, I build custom action plans that elevate brand development, improve customer reach, and achieve measurable marketing milestones.",
+    keywords: ["Social Media Strategy", "Brand Development", "Competitor Analysis", "Analytics & Reporting", "Marketing Campaigns"]
+  },
+  {
+    title: "TikTok & Instagram Growth Specialist",
+    desc: "Focused on organic reach and viral growth, I optimize your accounts to attract and retain targeted followers. My growth framework includes in-depth hashtag research, sound/trend analysis, and profile optimization to boost algorithm placement and build a loyal audience community.",
+    keywords: ["Organic Growth", "Hashtag Research", "Trend Research", "Audience Growth", "Account Optimization"]
+  },
+  {
+    title: "Video Editor & Short-Form Content Specialist",
+    desc: "Specialized in fast-paced short-form video production optimized for algorithm discovery. Using CapCut Pro, Canva, and Premiere Pro, I craft scroll-stopping Reels, TikToks, and YouTube Shorts engineered to generate maximum watch time and engagement.",
+    keywords: ["CapCut Pro", "Canva", "Adobe Premiere Pro", "TikTok Videos", "Instagram Reels", "YouTube Shorts"]
+  },
+  {
+    title: "Content Creator & Social Media Manager",
+    desc: "I provide complete end-to-end social media management—from creative content strategy and calendar planning to scheduling, audience engagement, and monthly growth tracking. I handle every detail so your brand stays active, consistent, and memorable across all social platforms.",
+    keywords: ["Content Creation", "Social Media Management", "Content Scheduling", "Audience Engagement", "Trend Analysis", "Viral Content"]
+  }
+];
+
+const modal = document.getElementById('expModal');
+const modalClose = document.getElementById('modalClose');
+const mTitle = document.getElementById('mTitle');
+const mDesc = document.getElementById('mDesc');
+const mKw = document.getElementById('mKw');
+
+document.querySelectorAll('.exp-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const idx = card.getAttribute('data-exp');
+    const data = expData[idx];
+    
+    mTitle.textContent = data.title;
+    mDesc.textContent = data.desc;
+    
+    mKw.innerHTML = '';
+    data.keywords.forEach(kw => {
+      const span = document.createElement('span');
+      span.className = 'modal-kw';
+      span.textContent = kw;
+      mKw.appendChild(span);
+    });
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+modalClose.addEventListener('click', () => {
+  modal.classList.remove('active');
+  document.body.style.overflow = 'auto';
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
 });
 </script>
 </body>
