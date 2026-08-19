@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Md. Mehedi Hasan Rana — Social Media Manager, Content Creator and Growth Specialist.">
 <title>Md. Mehedi Hasan Rana — Social Media Portfolio</title>
+
+<!-- Favicon Link -->
+<link rel="icon" type="image/png" href="t-1.png">
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
@@ -443,19 +447,16 @@ section{padding:110px 0}
         <div class="project-body"><span class="tag">Content Creation</span><h3>Instagram, TikTok & YouTube Shorts</h3><p>Multi-platform content designed to keep brands active and audience-focused.</p></div>
       </article>
 
-      <!-- Updated LinkedIn Marketing Project Image (Professional B2B Network/Growth Image) -->
       <article class="project reveal" data-cat="growth">
         <div class="project-img"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="LinkedIn Marketing project"></div>
         <div class="project-body"><span class="tag">B2B Growth</span><h3>LinkedIn Thought Leadership & B2B Strategy</h3><p>Tailored content strategies to position executives as industry leaders and scale B2B brand reach.</p></div>
       </article>
 
-      <!-- Business & Corporate -->
       <article class="project reveal" data-cat="content">
         <div class="project-img"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80" alt="Corporate Branding project"></div>
         <div class="project-body"><span class="tag">Corporate Branding</span><h3>Corporate Identity & Communication Campaign</h3><p>Unified digital brand representation, official announcements, and corporate storytelling across platforms.</p></div>
       </article>
 
-      <!-- Twitter Marketing -->
       <article class="project reveal" data-cat="growth">
         <div class="project-img"><img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=800&q=80" alt="Twitter Marketing project"></div>
         <div class="project-body"><span class="tag">Viral Strategy</span><h3>Twitter (X) Thread Campaigns & Audience Growth</h3><p>High-engagement threads and trend-hijacking techniques driving viral reach and follower growth.</p></div>
@@ -583,8 +584,8 @@ class Particle {
 
 function initParticles() {
   particles = [];
-  const count = Math.floor((canvas.width * canvas.height) / 18000);
-  for (let i = 0; i < count; i++) {
+  const numParticles = Math.floor((canvas.width * canvas.height) / 15000);
+  for (let i = 0; i < numParticles; i++) {
     particles.push(new Particle());
   }
 }
@@ -600,120 +601,129 @@ function animateParticles() {
 }
 animateParticles();
 
-// Scroll Reveal Animation
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+// Mobile Navigation Toggle
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
 
-// Portfolio Filter
-const buttons = document.querySelectorAll('.filter button');
+// Close Mobile Menu on Click
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
+
+// Scroll Reveal Animation
+const reveals = document.querySelectorAll('.reveal');
+function revealOnScroll() {
+  const windowHeight = window.innerHeight;
+  reveals.forEach(el => {
+    const elementTop = el.getBoundingClientRect().top;
+    const elementVisible = 100;
+    if (elementTop < windowHeight - elementVisible) {
+      el.classList.add('show');
+    }
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+
+// Portfolio Filtering
+const filterButtons = document.querySelectorAll('.filter button');
 const projects = document.querySelectorAll('.project');
-buttons.forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    buttons.forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const f=btn.dataset.filter;
-    projects.forEach(p=>{
-      p.style.display=(f==='all'||p.dataset.cat===f)?'block':'none';
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const filter = button.getAttribute('data-filter');
+
+    projects.forEach(project => {
+      if (filter === 'all' || project.getAttribute('data-cat') === filter) {
+        project.style.display = 'block';
+      } else {
+        project.style.display = 'none';
+      }
     });
   });
 });
 
-// Mobile Navigation Toggle
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
-menuToggle.addEventListener('click', ()=>{
-  navLinks.classList.toggle('active');
-});
-
-// Experience Modal Data
+// Experience Data and Modal Logic
 const expData = [
   {
     title: "Meta Ads Specialist | Facebook & Instagram Advertising",
-    desc: "I design and manage high-converting ad campaigns across Facebook and Instagram tailored to maximize ROI. From setting up Meta Pixel and custom audience targeting to scaling lead generation and retargeting campaigns, I bring a performance-driven approach.",
-    keywords: ["Meta Ads Specialist", "Facebook Ads", "Instagram Ads", "Audience Targeting", "Meta Pixel", "Lead Generation"]
+    desc: "Expert in setting up, optimizing, and scaling paid advertising campaigns across Facebook and Instagram. Focused on audience targeting, conversion tracking, ad creative strategy, and maximizing Return on Ad Spend (ROAS) for e-commerce and personal brands.",
+    keywords: ["Facebook Ads", "Instagram Ads", "ROAS", "Audience Targeting", "Ad Creative", "Conversion Tracking"]
   },
   {
     title: "TikTok Ads Specialist",
-    desc: "I create high-converting TikTok ad campaigns leveraging viral video formats and smart audience targeting. Combining creative strategy with TikTok Business tools, I build Spark Ads that boost brand awareness.",
-    keywords: ["TikTok Advertising", "Spark Ads", "TikTok Pixel", "Conversion Campaigns", "Creative Strategy"]
+    desc: "Specialized in creating and managing high-performing TikTok ad campaigns. Experienced in Spark Ads, lead generation, user-generated content (UGC) style ads, and leveraging native trends to drive low cost-per-acquisition (CPA) and high scale.",
+    keywords: ["TikTok Ads", "Spark Ads", "UGC Ads", "CPA Optimization", "Viral Creative", "Scaling"]
   },
   {
     title: "Professional Video Editor | Adobe Premiere Pro & CapCut Pro",
-    desc: "I offer full-suite video editing services using Adobe Premiere Pro and CapCut Pro. Specializing in short-form content like Reels, TikToks, and YouTube Shorts, I craft visual stories with dynamic motion graphics and sound design.",
-    keywords: ["Adobe Premiere Pro", "CapCut Pro", "Reels Editing", "TikTok Video Editing", "Motion Graphics"]
+    desc: "Professional editing for short-form and long-form video content. Skilled in pacing, dynamic kinetic captions, sound design, color grading, visual effects, and storytelling tailored specifically for YouTube, TikTok, and Instagram Reels.",
+    keywords: ["Premiere Pro", "CapCut Pro", "Kinetic Captions", "Color Grading", "Sound Design", "Pacing"]
   },
   {
     title: "Canva Graphic Designer & Video Editing Specialist",
-    desc: "I create visual assets and editable Canva templates that keep your brand looking cohesive and professional. From high-converting carousel posts and ad graphics to full brand kits.",
-    keywords: ["Canva Pro", "Carousel Design", "Social Media Graphics", "Brand Identity", "Digital Ads Design"]
+    desc: "Designing striking visual assets, social media carousels, brand kits, ad creatives, and promotional banners using Canva Pro, alongside seamless social-first video production and template design.",
+    keywords: ["Canva Pro", "Carousel Design", "Brand Kits", "Social Graphics", "Ad Banners", "Visual Identity"]
   },
   {
     title: "Social Media Marketing Consultant",
-    desc: "Helping businesses align their social media tactics with overarching business goals through audits, content mapping, and sustainable growth planning.",
-    keywords: ["Marketing Strategy", "Social Audit", "Brand Growth", "Consulting"]
+    desc: "Providing high-level strategic guidance and audits for businesses looking to revamp their social media footprint. Analyzing metrics, identifying growth bottlenecks, and building actionable roadmap plans.",
+    keywords: ["Strategy", "Social Audit", "Consulting", "Roadmap", "Analytics", "Growth Optimization"]
   },
   {
     title: "TikTok & Instagram Growth Specialist",
-    desc: "Executing organic strategies specifically tailored to algorithm updates on Instagram and TikTok to organically lift impressions and follower counts.",
-    keywords: ["Organic Reach", "Algorithm Optimization", "Viral Content Strategy", "Community Building"]
+    desc: "Organic growth expert focusing on algorithmic optimization, hashtag strategy, content formatting, and posting schedules designed to rapidly scale follower base and boost engagement rates on IG and TikTok.",
+    keywords: ["Organic Growth", "Algorithm", "Hashtag Strategy", "Follower Scaling", "Engagement Boost", "Reels Strategy"]
   },
   {
     title: "LinkedIn B2B Marketing & Executive Branding Specialist",
-    desc: "Developing high-impact B2B strategies to generate qualified leads and position key company executives as authoritative industry leaders through structured long-form and visual LinkedIn content.",
-    keywords: ["B2B Marketing", "LinkedIn Strategy", "Thought Leadership", "Lead Generation", "Executive Branding"]
+    desc: "Building authority and professional thought leadership for founders, executives, and B2B companies. Crafting high-impact written posts, company updates, and networking systems to drive inbound leads.",
+    keywords: ["LinkedIn B2B", "Thought Leadership", "Executive Branding", "Inbound Leads", "Professional Networking", "Content Writing"]
   },
   {
     title: "Business & Corporate Social Media Strategist",
-    desc: "Managing corporate social channels with tailored messaging that aligns with corporate guidelines, stakeholder relations, product launches, and company milestones.",
-    keywords: ["Corporate Branding", "Crisis Management", "Internal Communication", "Enterprise Strategy", "PR Integration"]
+    desc: "Developing formal social frameworks and communication guidelines for enterprise and corporate entities, ensuring brand safety, consistent messaging, and professional public relations alignment.",
+    keywords: ["Corporate Strategy", "Brand Safety", "PR Alignment", "Enterprise Social", "Communications", "Frameworks"]
   },
   {
     title: "Twitter (X) Organic Growth & Viral Content Specialist",
-    desc: "Crafting viral threads, leveraging real-time trends, and engaging with influential communities on Twitter to drive rapid account growth and brand authority.",
-    keywords: ["Twitter Threads", "Viral Content", "Real-Time Marketing", "X Analytics", "Community Engagement"]
+    desc: "Mastering the X algorithm through engaging micro-blogging, high-value structured threads, community participation, and trend-jacking to build a loyal and active following.",
+    keywords: ["Twitter Growth", "X Threads", "Micro-blogging", "Trend-jacking", "Community Building", "Viral Content"]
   }
 ];
 
-const modal = document.getElementById('expModal');
+const expCards = document.querySelectorAll('.exp-card');
+const expModal = document.getElementById('expModal');
 const modalClose = document.getElementById('modalClose');
 const mTitle = document.getElementById('mTitle');
 const mDesc = document.getElementById('mDesc');
 const mKw = document.getElementById('mKw');
 
-document.querySelectorAll('.exp-card').forEach(card => {
+expCards.forEach(card => {
   card.addEventListener('click', () => {
     const idx = card.getAttribute('data-exp');
     const data = expData[idx];
-    
-    if(data) {
-      mTitle.textContent = data.title;
-      mDesc.textContent = data.desc;
-      
-      mKw.innerHTML = '';
-      data.keywords.forEach(kw => {
-        const span = document.createElement('span');
-        span.className = 'modal-kw';
-        span.textContent = kw;
-        mKw.appendChild(span);
-      });
-      
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+    mTitle.textContent = data.title;
+    mDesc.textContent = data.desc;
+    mKw.innerHTML = data.keywords.map(kw => `<span class="modal-kw">${kw}</span>`).join('');
+    expModal.classList.add('active');
   });
 });
 
 modalClose.addEventListener('click', () => {
-  modal.classList.remove('active');
-  document.body.style.overflow = 'auto';
+  expModal.classList.remove('active');
 });
 
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
+expModal.addEventListener('click', (e) => {
+  if (e.target === expModal) {
+    expModal.classList.remove('active');
   }
 });
 </script>
