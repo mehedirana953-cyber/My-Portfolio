@@ -3,671 +3,486 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Md. Mehedi Hasan Rana — Social Media Manager, Content Creator and Growth Specialist.">
-<title>Md. Mehedi Hasan Rana — Social Media Portfolio</title>
+<title>Md. Mehedi Hasan Rana — Ultra Premium Portfolio</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@500;700;800&display=swap');
 
-:root{
-  --bg:#07070a; --panel:rgba(20, 20, 28, 0.65); --panel2:rgba(28, 28, 40, 0.7); --text:#f4f4f4; --muted:#b0b0ba;
-  --line:rgba(255, 255, 255, 0.08); --accent:#77ff35; --accent2:#b7ff92; --radius:24px; --max:1200px;
+:root {
+  --bg: #030308;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-hover: rgba(255, 255, 255, 0.07);
+  --accent: #00ff87;
+  --accent-glow: rgba(0, 255, 135, 0.35);
+  --accent-blue: #60a5fa;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --radius: 24px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);line-height:1.55;overflow-x:hidden;position:relative}
 
-/* Animated Vibrant Mesh Background */
-.bg-gradient-container {
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Premium Dynamic Ambient Mesh */
+.ambient-bg {
   position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
+  inset: 0;
   z-index: -2;
   overflow: hidden;
-  background: #060609;
+  pointer-events: none;
 }
-.blob {
+.glow-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.35;
-  animation: floatAnim 18s infinite alternate ease-in-out;
+  filter: blur(140px);
+  opacity: 0.25;
+  animation: orbFloat 22s infinite alternate ease-in-out;
 }
-.blob-1 { width: 450px; height: 450px; background: #77ff35; top: -100px; left: -100px; animation-duration: 14s; }
-.blob-2 { width: 500px; height: 500px; background: #9d00ff; bottom: -150px; right: -100px; animation-duration: 20s; }
-.blob-3 { width: 400px; height: 400px; background: #00d2ff; top: 40%; left: 30%; animation-duration: 16s; }
+.orb-1 { width: 600px; height: 600px; background: #00ff87; top: -10%; left: -10%; }
+.orb-2 { width: 700px; height: 700px; background: #3b82f6; bottom: -20%; right: -10%; animation-delay: -5s; }
+.orb-3 { width: 500px; height: 500px; background: #8b5cf6; top: 40%; left: 35%; animation-delay: -10s; }
 
-@keyframes floatAnim {
+@keyframes orbFloat {
   0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(120px, 80px) scale(1.2); }
-  100% { transform: translate(-80px, 140px) scale(0.9); }
+  50% { transform: translate(80px, 60px) scale(1.15); }
+  100% { transform: translate(-60px, 100px) scale(0.9); }
 }
 
-#particleCanvas {
+canvas#canvas3d {
   position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
+  inset: 0;
   z-index: -1;
   pointer-events: none;
 }
 
-a{color:inherit;text-decoration:none}
-.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+.container { width: min(1240px, calc(100% - 48px)); margin: auto; }
 
-/* Animated Navigation Header */
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10, 10, 16, 0.7);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
-.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:"Space Grotesk";font-weight:700;letter-spacing:-.02em;font-size:18px;text-transform:uppercase}
-.logo span{color:var(--accent); text-shadow: 0 0 10px rgba(119,255,53,0.5);}
-
-.nav-links{display:flex;gap:24px;color:#cfcfcf;font-size:14px;align-items:center}
+/* Ultra Sleek Glass Nav */
+.nav {
+  position: fixed;
+  top: 20px; left: 0; right: 0;
+  z-index: 100;
+}
+.nav-inner {
+  background: rgba(10, 10, 18, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--card-border);
+  border-radius: 100px;
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+.logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 28px; align-items: center; }
 .nav-links a {
-  position: relative;
-  padding: 6px 10px;
-  transition: color 0.3s ease;
+  font-size: 14px;
   font-weight: 500;
-}
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 50%; width: 0; height: 2px;
-  background: var(--accent);
-  box-shadow: 0 0 10px var(--accent);
+  color: var(--muted);
   transition: all 0.3s ease;
-  transform: translateX(-50%);
+  position: relative;
 }
-.nav-links a:hover {
-  color: #fff;
-  text-shadow: 0 0 8px rgba(255,255,255,0.6);
+.nav-links a:hover { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+.btn-nav {
+  background: linear-gradient(135deg, var(--accent), #00b862);
+  color: #030703;
+  padding: 10px 22px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px var(--accent-glow);
 }
-.nav-links a:hover::after {
-  width: 100%;
+.btn-nav:hover { transform: translateY(-2px); box-shadow: 0 0 30px var(--accent-glow); }
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  padding: 160px 0 100px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 60px;
 }
-
-.nav-btn{padding:10px 20px;border:1px solid var(--accent);border-radius:999px;color:var(--accent);font-weight:700;font-size:13px;transition:.3s;box-shadow: 0 0 12px rgba(119, 255, 53, 0.15);}
-.nav-btn:hover{background:var(--accent);color:#080808;box-shadow: 0 0 20px rgba(119, 255, 53, 0.6);transform: translateY(-2px);}
-
-.hero{min-height:100vh;padding:145px 0 80px;display:grid;grid-template-columns:1.18fr .82fr;align-items:center;gap:50px}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,0.15);border-radius:999px;padding:8px 16px;color:#d4d4d4;font-size:13px;margin-bottom:25px;background:rgba(255,255,255,0.03);backdrop-filter:blur(10px)}
-.dot{width:8px;height:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 18px var(--accent);animation:pulse 2s infinite}
-
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border-radius: 100px;
+  background: rgba(0, 255, 135, 0.06);
+  border: 1px solid rgba(0, 255, 135, 0.2);
+  font-size: 13px;
+  color: var(--accent);
+  margin-bottom: 28px;
+}
+.pulse-dot {
+  width: 8px; height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--accent);
+  animation: pulse 2s infinite;
+}
 @keyframes pulse {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(119, 255, 53, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(119, 255, 53, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(119, 255, 53, 0); }
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0,255,135,0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0,255,135,0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0,255,135,0); }
 }
 
-h1{font-family:"Space Grotesk";font-size:clamp(38px,4.8vw,68px);line-height:1.15;letter-spacing:-.04em;max-width:900px}
-h1 em{font-style:normal;color:var(--accent); text-shadow:0 0 20px rgba(119,255,53,0.3)}
-.hero-copy{margin-top:28px;max-width:670px;color:#bcbcbc;font-size:18px}
-.actions{display:flex;gap:13px;margin-top:34px;flex-wrap:wrap}
-.btn{padding:14px 24px;border-radius:999px;border:1px solid rgba(255,255,255,0.15);font-weight:700;font-size:14px;transition:.3s;backdrop-filter:blur(10px)}
-.btn.primary{background:var(--accent);color:#071004;border-color:var(--accent);box-shadow:0 0 25px rgba(119,255,53,0.3)}
-.btn.primary:hover{box-shadow:0 0 35px rgba(119,255,53,0.6);transform:translateY(-3px)}
-.btn.ghost:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 0 15px rgba(119,255,53,0.2);transform:translateY(-3px)}
-
-.hero-card{position:relative;padding:24px;border:1px solid var(--line);border-radius:32px;background:var(--panel);backdrop-filter:blur(16px);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 30px 60px rgba(0,0,0,0.4)}
-.profile-wrap{position:relative;z-index:2;width:100%;max-width:360px;aspect-ratio:4/4.5;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
-.profile-wrap img{width:100%;height:100%;object-fit:cover;object-position:top;transition:0.5s}
-.hero-card:hover .profile-wrap img{transform:scale(1.03)}
-.badge{position:relative;z-index:3;margin-top:-30px;padding:12px 20px;border:1px solid rgba(255,255,255,.15);background:rgba(15,15,22,.85);backdrop-filter:blur(16px);border-radius:20px;font-size:13px;box-shadow:0 15px 35px rgba(0,0,0,.5);text-align:center;width:calc(100% - 40px);max-width:320px}
-.badge strong{display:inline-block;color:var(--accent);font-size:18px;font-family:"Space Grotesk";margin-right:6px}
-
-.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0;background:rgba(20,20,30,0.3);backdrop-filter:blur(10px)}
-.stat-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{padding:10px 24px;border-right:1px solid var(--line)}
-.stat:last-child{border:0}
-.stat b{font-family:"Space Grotesk";font-size:30px;letter-spacing:-.04em;color:#fff}
-.stat span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
-
-.platforms-list{display:block;font-size:14px;color:#e0e0e0;font-weight:600;line-height:1.45;word-break:break-word}
-
-section{padding:110px 0}
-.section-kicker{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:15px;text-shadow:0 0 10px rgba(119,255,53,0.3)}
-.section-title{font-family:"Space Grotesk";font-size:clamp(38px,5vw,68px);letter-spacing:-.055em;line-height:1}
-.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}
-.about-text{font-size:20px;color:#cfcfcf}
-.about-text p+p{margin-top:22px}
-
-.expertise{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
-.skill{padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--panel);backdrop-filter:blur(10px);display:flex;justify-content:space-between;gap:15px;transition:.3s}
-.skill:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 20px rgba(0,0,0,0.3)}
-.skill span:last-child{color:var(--accent)}
-
-.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:45px}
-.service{min-height:230px;padding:25px;border:1px solid var(--line);border-radius:22px;background:var(--panel);backdrop-filter:blur(12px);transition:.3s}
-.service:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:0 15px 30px rgba(119,255,53,0.1)}
-.icon{width:42px;height:42px;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;color:var(--accent);margin-bottom:30px;font-weight:700;background:rgba(255,255,255,0.02)}
-.service h3{font-family:"Space Grotesk";font-size:20px;margin-bottom:10px}
-.service p{color:var(--muted);font-size:14px}
-
-.work-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
-.filter{display:flex;gap:8px;flex-wrap:wrap}
-.filter button{background:var(--panel);color:#aaa;border:1px solid var(--line);border-radius:999px;padding:9px 16px;cursor:pointer;transition:.2s;backdrop-filter:blur(10px)}
-.filter button.active,.filter button:hover{color:#080808;background:var(--accent);border-color:var(--accent);box-shadow:0 0 15px rgba(119,255,53,0.4)}
-.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:45px}
-.project{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--panel);backdrop-filter:blur(12px);transition:.3s}
-.project:hover{transform:translateY(-6px);border-color:rgba(255,255,255,0.3);box-shadow:0 20px 40px rgba(0,0,0,0.5)}
-.project-img{aspect-ratio:1.32;overflow:hidden;background:#151515}
-.project-img img{width:100%;height:100%;object-fit:cover;transition:.5s}
-.project:hover img{transform:scale(1.05)}
-.project-body{padding:20px}
-.tag{color:var(--accent);font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700}
-.project h3{font-family:"Space Grotesk";font-size:20px;margin:8px 0}
-.project p{color:var(--muted);font-size:14px}
-
-/* Interactive Experience Section Styling */
-.experience-list{display:flex;flex-direction:column;gap:16px;margin-top:45px}
-.exp-card{border:1px solid var(--line);border-radius:20px;padding:24px 30px;background:var(--panel);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:.3s}
-.exp-card:hover{border-color:var(--accent);background:var(--panel2);transform:translateX(8px);box-shadow:0 10px 25px rgba(119,255,53,0.15)}
-.exp-title{font-family:"Space Grotesk";font-size:20px;font-weight:600;color:#f4f4f4;display:flex;align-items:center;gap:15px}
-.exp-icon{width:38px;height:38px;border-radius:50%;background:rgba(119,255,53,.1);border:1px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-size:14px;flex-shrink:0;box-shadow:0 0 10px rgba(119,255,53,0.2)}
-.exp-arrow{color:var(--accent);font-size:20px;transition:.3s}
-.exp-card:hover .exp-arrow{transform:translateX(6px)}
-
-/* Glassmorphism Popup Modal */
-.modal-overlay{position:fixed;inset:0;background:rgba(5,5,10,.85);backdrop-filter:blur(12px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
-.modal-overlay.active{display:flex}
-.modal-box{background:rgba(18,18,26,0.95);border:1px solid var(--accent);border-radius:28px;max-width:650px;width:100%;padding:40px;position:relative;box-shadow:0 0 50px rgba(119,255,53,0.2);animation:modalIn .3s cubic-bezier(0.16, 1, 0.3, 1)}
-@keyframes modalIn{from{opacity:0;transform:scale(.92) translateY(15px)}to{opacity:1;transform:scale(1) translateY(0)}}
-.modal-close{position:absolute;top:20px;right:25px;background:none;border:none;color:#888;font-size:28px;cursor:pointer;transition:.2s}
-.modal-close:hover{color:var(--accent)}
-.modal-title{font-family:"Space Grotesk";font-size:26px;color:var(--accent);margin-bottom:18px;padding-right:20px;text-shadow:0 0 10px rgba(119,255,53,0.3)}
-.modal-desc{color:#e0e0e0;font-size:16px;line-height:1.7;margin-bottom:24px}
-.modal-keywords{display:flex;flex-wrap:wrap;gap:8px}
-.modal-kw{background:rgba(119,255,53,0.08);border:1px solid rgba(119,255,53,0.3);border-radius:999px;padding:6px 14px;font-size:12px;color:var(--accent2)}
-
-.process{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:45px}
-.step{padding:24px;border-top:1px solid var(--line);background:rgba(255,255,255,0.01);border-radius:12px;transition:.3s}
-.step:hover{background:rgba(255,255,255,0.03)}
-.step-no{color:var(--accent);font-family:"Space Grotesk";font-size:14px}.step h3{margin:32px 0 8px;font-family:"Space Grotesk";font-size:21px}.step p{color:var(--muted);font-size:14px}
-
-.tools{display:flex;flex-wrap:wrap;gap:12px;margin-top:35px}
-.tool{border:1px solid var(--line);background:var(--panel);backdrop-filter:blur(10px);padding:12px 20px;border-radius:999px;color:#d0d0d0;font-size:14px;font-weight:500;transition:.25s;display:inline-flex;align-items:center;gap:6px}
-.tool:hover{border-color:var(--accent);color:#fff;background:var(--panel2);transform:translateY(-3px);box-shadow:0 5px 15px rgba(119,255,53,0.2)}
-
-.cta{padding:80px 0 110px}
-.cta-box{border:1px solid var(--line);border-radius:30px;padding:70px;position:relative;overflow:hidden;background:radial-gradient(circle at 80% 20%,rgba(119,255,53,.15),transparent 45%),var(--panel);backdrop-filter:blur(16px)}
-.cta-box h2{font-family:"Space Grotesk";font-size:clamp(42px,6vw,78px);letter-spacing:-.06em;line-height:.98;max-width:780px}
-.cta-box p{color:var(--muted);margin:22px 0 30px;max-width:600px}
-.footer{border-top:1px solid var(--line);padding:28px 0;color:#777;font-size:13px;display:flex;justify-content:space-between;gap:20px}
-.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
-.menu-btn{display:none;background:none;border:1px solid #333;color:white;border-radius:10px;padding:8px 12px;cursor:pointer}
-
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr;gap:45px;padding-top:120px}
-  .stat-grid{grid-template-columns:repeat(2,1fr)}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:0}
-  .about{grid-template-columns:1fr;gap:45px}.services-grid{grid-template-columns:repeat(2,1fr)}
-  .work-grid{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(2,1fr)}
-  .menu-btn{display:block}
-  .nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:rgba(10,10,16,0.95);backdrop-filter:blur(20px);flex-direction:column;padding:20px;border-bottom:1px solid var(--line)}
-  .nav-links.active{display:flex}
+h1.hero-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(42px, 5.5vw, 76px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
-@media(max-width:620px){
-  .container{width:min(100% - 28px,var(--max))}.hero{padding-bottom:55px}
-  h1{font-size:32px}.hero-copy{font-size:16px}
-  .stat-grid{grid-template-columns:1fr 1fr}.stat{padding:12px 8px}.stat b{font-size:23px}
-  section{padding:78px 0}.services-grid,.work-grid,.process{grid-template-columns:1fr}
-  .expertise{grid-template-columns:1fr}
-  .cta-box{padding:42px 25px}.footer{flex-direction:column}
-  .exp-card{padding:18px 20px}
-  .modal-box{padding:28px 20px}
+.text-gradient {
+  background: linear-gradient(135deg, #fff 30%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-desc {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 620px;
+}
+
+.hero-cta { display: flex; gap: 16px; margin-top: 36px; }
+.btn-primary {
+  padding: 16px 32px;
+  border-radius: 100px;
+  background: var(--accent);
+  color: #030703;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px var(--accent-glow);
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px var(--accent-glow); }
+.btn-secondary {
+  padding: 16px 32px;
+  border-radius: 100px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-3px); }
+
+/* Premium Portrait Card */
+.portrait-card {
+  position: relative;
+  border-radius: 32px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+  border: 1px solid var(--card-border);
+  padding: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.portrait-img-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 24px;
+  overflow: hidden;
+  background: radial-gradient(circle at center, rgba(0, 255, 135, 0.15), transparent 70%);
+}
+.portrait-img-box img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top;
+  mix-blend-mode: luminosity;
+  filter: contrast(110%) brightness(105%);
+  transition: all 0.5s ease;
+}
+.portrait-card:hover .portrait-img-box img {
+  mix-blend-mode: normal;
+  transform: scale(1.04);
+}
+.floating-glass-badge {
+  position: absolute;
+  bottom: 30px; left: 30px; right: 30px;
+  padding: 16px 20px;
+  background: rgba(10, 10, 18, 0.75);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Content Bento Grid */
+section { padding: 120px 0; }
+.section-tag {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.section-head {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 50px;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.bento-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 36px;
+  backdrop-filter: blur(16px);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+.bento-card:hover {
+  background: var(--card-hover);
+  border-color: rgba(0, 255, 135, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+.bento-icon {
+  width: 50px; height: 50px;
+  border-radius: 14px;
+  background: rgba(0, 255, 135, 0.1);
+  border: 1px solid rgba(0, 255, 135, 0.2);
+  display: grid; place-items: center;
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.bento-card h3 { font-family: 'Syne', sans-serif; font-size: 22px; margin-bottom: 12px; }
+.bento-card p { color: var(--muted); font-size: 15px; }
+
+/* Interactive Experience List */
+.exp-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 36px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  margin-bottom: 16px;
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.exp-row:hover {
+  background: var(--card-hover);
+  border-color: var(--accent);
+  transform: translateX(10px);
+}
+.exp-row h4 { font-family: 'Syne', sans-serif; font-size: 20px; }
+
+/* Modal */
+.modal-bg {
+  position: fixed; inset: 0;
+  background: rgba(3, 3, 8, 0.85);
+  backdrop-filter: blur(20px);
+  z-index: 200;
+  display: none; place-items: center; padding: 20px;
+}
+.modal-bg.active { display: grid; }
+.modal-content {
+  background: #0a0a12;
+  border: 1px solid var(--accent);
+  border-radius: 28px;
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 80px rgba(0,255,135,0.2);
+  position: relative;
+}
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+.reveal.show { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 130px; }
+  .bento-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
 
-<!-- Animated Vibrant Mesh Background -->
-<div class="bg-gradient-container">
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
+<div class="ambient-bg">
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
 </div>
 
-<!-- Interactive Particle Canvas -->
-<canvas id="particleCanvas"></canvas>
+<canvas id="canvas3d"></canvas>
 
 <nav class="nav">
   <div class="container nav-inner">
-    <a class="logo" href="#top">MD. MEHEDI HASAN RANA<span>.</span></a>
-    <button class="menu-btn" id="menuToggle">☰</button>
-    <div class="nav-links" id="navLinks">
+    <a href="#" class="logo">MEHEDI<span>.</span></a>
+    <div class="nav-links">
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#work">Work</a>
-      <a href="#other-experience">Other Experience</a>
-      <a href="#process">Process</a>
-      <a class="nav-btn" href="#contact">Let's Talk</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact" class="btn-nav">Let's Talk</a>
     </div>
   </div>
 </nav>
 
-<main id="top">
-<section class="container hero">
-  <div class="reveal">
-    <div class="eyebrow"><span class="dot"></span> Available for any project</div>
-    <h1>
-      Social Media Manager<br>
-      <em>Instagram & TikTok Marketing</em><br>
-      Content Growth Specialist
-    </h1>
-    <p class="hero-copy">I'm Md. Mehedi Hasan Rana — a Social Media Manager, Content Creator and Growth Specialist helping brands build visibility, engagement and a stronger online presence through strategic content and organic growth.</p>
-    <div class="actions">
-      <a class="btn primary" href="#work">Explore My Work ↗</a>
-      <a class="btn ghost" href="#contact">Start a Project</a>
+<main class="container">
+  <section class="hero">
+    <div class="reveal">
+      <div class="hero-badge"><span class="pulse-dot"></span> Available for Growth Projects</div>
+      <h1 class="hero-title">Elevating Brands Through <span class="text-gradient">Viral Content & Strategy.</span></h1>
+      <p class="hero-desc">I'm Md. Mehedi Hasan Rana — Social Media Growth Specialist & Video Editor with 6+ years driving organic reach, engagement, and direct revenue for global brands.</p>
+      <div class="hero-cta">
+        <a href="#work" class="btn-primary">View Portfolio ↗</a>
+        <a href="#contact" class="btn-secondary">Get In Touch</a>
+      </div>
     </div>
-  </div>
-  <div class="hero-card reveal">
-    <div class="profile-wrap">
-      <img src="t-1.png" alt="Md. Mehedi Hasan Rana">
-    </div>
-    <div class="badge">
-      <strong>6+ Years</strong> Social media experience
-    </div>
-  </div>
-</section>
-
-<div class="stats">
-  <div class="container stat-grid">
-    <div class="stat"><b>6+</b><span>Years Experience</span></div>
-    <div class="stat"><b>100%</b><span>Client-focused workflow</span></div>
-    <div class="stat"><b>12+</b><span>Portfolio Projects Shown</span></div>
-    <div class="stat">
-      <span class="platforms-list">Instagram • TikTok • Facebook • LinkedIn • YouTube • Pinterest • Reddit</span>
-      <span>Core Growth Platforms</span>
-    </div>
-  </div>
-</div>
-
-<section id="about" class="container about">
-  <div class="reveal">
-    <div class="section-kicker">01 / About</div>
-    <h2 class="section-title">Strategy first.<br>Content second.<br><em style="color:var(--accent)">Growth always.</em></h2>
-  </div>
-  <div class="about-text reveal">
-    <p>For over 6 years, I have helped businesses, startups, personal brands and eCommerce brands strengthen their online presence through social media management, content creation, short-form video and organic growth strategies.</p>
-    <p>I focus on creating content that looks professional, feels relevant and gives brands a consistent system for staying visible and connected with the right audience.</p>
     
-    <div class="expertise">
-      <div class="skill"><span>Social Media Management</span><span>↗</span></div>
-      <div class="skill"><span>Content Strategy</span><span>↗</span></div>
-      <div class="skill"><span>Instagram Growth</span><span>↗</span></div>
-      <div class="skill"><span>TikTok Growth</span><span>↗</span></div>
-      <div class="skill"><span>Reels & Short-form Video</span><span>↗</span></div>
-      <div class="skill"><span>Organic Growth</span><span>↗</span></div>
+    <div class="portrait-card reveal">
+      <div class="portrait-img-box">
+        <img src="t-1.png" alt="Md. Mehedi Hasan Rana">
+      </div>
+      <div class="floating-glass-badge">
+        <div>
+          <h4 style="font-size:16px; font-weight:700;">Mehedi Hasan</h4>
+          <p style="font-size:12px; color:var(--muted);">Social Media Specialist</p>
+        </div>
+        <span style="color:var(--accent); font-weight:800; font-size:18px;">6+ Yrs</span>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="services">
-  <div class="container">
-    <div class="section-kicker reveal">02 / Services</div>
-    <h2 class="section-title reveal">What I can do<br><em style="color:var(--accent)">for your brand.</em></h2>
+  <section id="services">
+    <div class="section-tag reveal">Capabilities</div>
+    <h2 class="section-head reveal">Tailored Solutions for <br><span class="text-gradient">Exponential Growth.</span></h2>
     
-    <div class="services-grid">
-      <article class="service reveal"><div class="icon">01</div><h3>Social Media Management</h3><p>Consistent account management, scheduling, engagement and optimization built around your brand goals.</p></article>
-      <article class="service reveal"><div class="icon">02</div><h3>Content Creation</h3><p>Scroll-stopping posts, captions, creative concepts and content systems designed for consistency.</p></article>
-      <article class="service reveal"><div class="icon">03</div><h3>Instagram & TikTok Growth</h3><p>Platform-specific content and organic growth strategies for stronger reach, engagement and visibility.</p></article>
-      <article class="service reveal"><div class="icon">04</div><h3>Reels & Short-form Video</h3><p>Short-form editing with strong hooks, pacing, captions, transitions and social-first storytelling.</p></article>
-      <article class="service reveal"><div class="icon">05</div><h3>Content Strategy & Planning</h3><p>Content pillars, calendars, trend research and practical plans that turn ideas into repeatable output.</p></article>
-      <article class="service reveal"><div class="icon">06</div><h3>Organic Growth & Engagement</h3><p>Audience-focused optimization and engagement systems designed for sustainable social growth.</p></article>
-      <article class="service reveal"><div class="icon">07</div><h3>Meta Ads Support</h3><p>Campaign creative, audience-focused content and performance-minded support for paid social.</p></article>
-      <article class="service reveal"><div class="icon">08</div><h3>TikTok Ads Specialist</h3><p>Targeted TikTok ad campaigns and high-converting video creatives tailored for virality.</p></article>
-      <article class="service reveal"><div class="icon">09</div><h3>Profile Optimization</h3><p>Professional SEO bio setup, highlight covers, link-in-bio trees, and overall brand aesthetic setup.</p></article>
-      <article class="service reveal"><div class="icon">10</div><h3>Content Scheduling & Publishing</h3><p>Organized posting workflows utilizing top management tools to ensure maximum peak-time reach.</p></article>
-      <article class="service reveal"><div class="icon">11</div><h3>Virtual Assistant (Social Media)</h3><p>Daily account maintenance, DM management, comment moderation, and routine administrative support.</p></article>
-      <article class="service reveal"><div class="icon">12</div><h3>Social Media Marketing</h3><p>End-to-end multi-platform marketing strategies to build brand loyalty and generate leads.</p></article>
-      <article class="service reveal"><div class="icon">13</div><h3>Adobe Premiere Pro Editing</h3><p>Professional video post-production, advanced color grading, motion graphics, and audio polishing.</p></article>
-      <article class="service reveal"><div class="icon">14</div><h3>CapCut Pro Video Specialist</h3><p>Fast-turnaround short video edits, trendy sound selection, captions, and viral effects.</p></article>
-      <article class="service reveal"><div class="icon">15</div><h3>Canva Pro Design Expert</h3><p>Custom graphic design, carousel posts, story templates, and visual brand assets.</p></article>
-      <article class="service reveal"><div class="icon">16</div><h3>Brand Presence Building</h3><p>A cohesive social presence that keeps your brand active, professional and highly recognizable.</p></article>
-    </div>
-  </div>
-</section>
-
-<section id="work">
-  <div class="container">
-    <div class="work-head">
-      <div class="reveal"><div class="section-kicker">03 / Selected Work</div><h2 class="section-title">A few projects<br>I’m proud of.</h2></div>
-      <div class="filter reveal">
-        <button class="active" data-filter="all">All</button>
-        <button data-filter="growth">Growth</button>
-        <button data-filter="content">Content</button>
-        <button data-filter="video">Video</button>
+    <div class="bento-grid">
+      <div class="bento-card reveal">
+        <div class="bento-icon">01</div>
+        <h3>Social Strategy</h3>
+        <p>Data-driven content pillars, competitor research, and growth frameworks for high-converting social channels.</p>
+      </div>
+      <div class="bento-card reveal">
+        <div class="bento-icon">02</div>
+        <h3>Short-Form Reels & TikTok</h3>
+        <p>High-retention editing, viral hooks, dynamic sound design, and trend-focused storytelling.</p>
+      </div>
+      <div class="bento-card reveal">
+        <div class="bento-icon">03</div>
+        <h3>Meta & TikTok Ads</h3>
+        <p>Targeted paid ad setup, pixel integration, high-ROAS video creative, and campaign scaling.</p>
       </div>
     </div>
-    <div class="work-grid">
-      <article class="project reveal" data-cat="growth">
-        <div class="project-img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Meta Ads project"></div>
-        <div class="project-body"><span class="tag">Paid Social</span><h3>Meta Ads Performance & Optimization</h3><p>Conversion-focused creative and performance support for social advertising.</p></div>
-      </article>
+  </section>
 
-      <article class="project reveal" data-cat="growth">
-        <div class="project-img"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=800&q=80" alt="Instagram Growth project"></div>
-        <div class="project-body"><span class="tag">Instagram Growth</span><h3>Instagram Growth & Organic Content Strategy</h3><p>Content-led growth strategy built around consistency and audience engagement.</p></div>
-      </article>
-
-      <article class="project reveal" data-cat="content">
-        <div class="project-img"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Social content project"></div>
-        <div class="project-body"><span class="tag">Content Marketing</span><h3>Full-Service Social Media Content</h3><p>Product-focused social creative designed for brand awareness and engagement.</p></div>
-      </article>
-
-      <article class="project reveal" data-cat="video">
-        <div class="project-img"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Reels editing project"></div>
-        <div class="project-body"><span class="tag">Short-form Video</span><h3>Reels & TikTok Content Editing</h3><p>Fast-paced social edits with captions, transitions and platform-ready formatting.</p></div>
-      </article>
-
-      <article class="project reveal" data-cat="growth">
-        <div class="project-img"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Reels growth project"></div>
-        <div class="project-body"><span class="tag">Organic Growth</span><h3>IG & TikTok Reels Growth</h3><p>Short-form content strategy paired with consistent publishing and optimization.</p></div>
-      </article>
-
-      <article class="project reveal" data-cat="content">
-        <div class="project-img"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Social media content creator project"></div>
-        <div class="project-body"><span class="tag">Content Creation</span><h3>Instagram, TikTok & YouTube Shorts</h3><p>Multi-platform content designed to keep brands active and audience-focused.</p></div>
-      </article>
-
-      <article class="project reveal" data-cat="content">
-        <div class="project-img"><img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="Social management project"></div>
-        <div class="project-body"><span class="tag">Social Management</span><h3>Social Media Management</h3><p>Content planning and account management for consistent brand communication.</p></div>
-      </article>
-
-      <article class="project reveal" data-cat="content">
-        <div class="project-img"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80" alt="Real estate social media project"></div>
-        <div class="project-body"><span class="tag">Real Estate</span><h3>Real Estate Social Content</h3><p>Professional visual content created to support property marketing and brand presence.</p></div>
-      </article>
-
-      <article class="project reveal" data-cat="video">
-        <div class="project-img"><img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=format&fit=crop&w=800&q=80" alt="TikTok and Instagram content project"></div>
-        <div class="project-body"><span class="tag">TikTok + Instagram</span><h3>High-Volume Short-form Content</h3><p>Content production workflow built for multiple accounts and consistent daily publishing.</p></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- OTHER EXPERIENCES SECTION -->
-<section id="other-experience">
-  <div class="container">
-    <div class="section-kicker reveal">Specialized Expertise</div>
-    <h2 class="section-title reveal">Other Experiences<br><em style="color:var(--accent)">click to view details.</em></h2>
+  <section id="experience">
+    <div class="section-tag reveal">Track Record</div>
+    <h2 class="section-head reveal">Specialized Expertise</h2>
     
-    <div class="experience-list reveal">
-      
-      <div class="exp-card" data-exp="0">
-        <div class="exp-title"><span class="exp-icon">01</span> Meta Ads Specialist | Facebook & Instagram Advertising</div>
-        <span class="exp-arrow">↗</span>
-      </div>
-
-      <div class="exp-card" data-exp="1">
-        <div class="exp-title"><span class="exp-icon">02</span> TikTok Ads Specialist</div>
-        <span class="exp-arrow">↗</span>
-      </div>
-
-      <div class="exp-card" data-exp="2">
-        <div class="exp-title"><span class="exp-icon">03</span> Professional Video Editor | Adobe Premiere Pro & CapCut Pro</div>
-        <span class="exp-arrow">↗</span>
-      </div>
-
-      <div class="exp-card" data-exp="3">
-        <div class="exp-title"><span class="exp-icon">04</span> Canva Graphic Designer & Video Editing Specialist</div>
-        <span class="exp-arrow">↗</span>
-      </div>
-
-      <div class="exp-card" data-exp="4">
-        <div class="exp-title"><span class="exp-icon">05</span> Social Media Marketing Consultant</div>
-        <span class="exp-arrow">↗</span>
-      </div>
-
-      <div class="exp-card" data-exp="5">
-        <div class="exp-title"><span class="exp-icon">06</span> TikTok & Instagram Growth Specialist</div>
-        <span class="exp-arrow">↗</span>
-      </div>
-
-      <div class="exp-card" data-exp="6">
-        <div class="exp-title"><span class="exp-icon">07</span> Video Editor & Short-Form Content Specialist</div>
-        <span class="exp-arrow">↗</span>
-      </div>
-
-      <div class="exp-card" data-exp="7">
-        <div class="exp-title"><span class="exp-icon">08</span> Content Creator & Social Media Manager</div>
-        <span class="exp-arrow">↗</span>
-      </div>
-
+    <div class="exp-row reveal" onclick="openModal('Meta Ads Specialist', 'Dedicated campaign management, custom audience setup, and high-converting creative optimization for scaled e-commerce brands.')">
+      <h4>01. Meta Ads & Facebook Growth</h4>
+      <span style="color:var(--accent);">↗</span>
     </div>
-  </div>
-</section>
-
-<!-- POPUP MODAL COMPONENT -->
-<div class="modal-overlay" id="expModal">
-  <div class="modal-box">
-    <button class="modal-close" id="modalClose">&times;</button>
-    <h3 class="modal-title" id="mTitle">Title Here</h3>
-    <p class="modal-desc" id="mDesc">Description here</p>
-    <div class="modal-keywords" id="mKw"></div>
-  </div>
-</div>
-
-<section id="process">
-  <div class="container">
-    <div class="section-kicker reveal">04 / Process</div>
-    <h2 class="section-title reveal">Simple process.<br><em style="color:var(--accent)">Serious execution.</em></h2>
-    <div class="process">
-      <div class="step reveal"><span class="step-no">01</span><h3>Discover</h3><p>Understand your brand, audience, goals, competitors and current social presence.</p></div>
-      <div class="step reveal"><span class="step-no">02</span><h3>Plan</h3><p>Build content pillars, creative direction, publishing rhythm and growth priorities.</p></div>
-      <div class="step reveal"><span class="step-no">03</span><h3>Create</h3><p>Produce, edit, optimize and prepare platform-ready content that matches your brand.</p></div>
-      <div class="step reveal"><span class="step-no">04</span><h3>Optimize</h3><p>Review performance, improve what works and keep the strategy moving forward.</p></div>
+    <div class="exp-row reveal" onclick="openModal('TikTok Viral Strategy', 'End-to-end TikTok account growth using viral hooks, algorithm hacking, and audience retention techniques.')">
+      <h4>02. TikTok Growth & Ads Specialist</h4>
+      <span style="color:var(--accent);">↗</span>
     </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="section-kicker reveal">05 / Tools</div>
-    <h2 class="section-title reveal">Built with the tools<br>modern brands use.</h2>
-    
-    <div class="tools reveal">
-      <span class="tool">Canva Pro</span>
-      <span class="tool">CapCut Pro</span>
-      <span class="tool">Adobe Premiere Pro</span>
-      <span class="tool">Adobe Photoshop</span>
-      <span class="tool">Meta Business Suite</span>
-      <span class="tool">Metricool</span>
-      <span class="tool">Buffer</span>
-      <span class="tool">ChatGPT</span>
-      <span class="tool">Google Gemini</span>
-      <span class="tool">Claude AI</span>
-      <span class="tool">Grok AI</span>
-      <span class="tool">AnswerThePublic</span>
-      <span class="tool">BuzzSumo</span>
-      <span class="tool">Social Blade</span>
-      <span class="tool">Notion</span>
-      <span class="tool">Zapier</span>
-      <span class="tool">Google Workspace</span>
+    <div class="exp-row reveal" onclick="openModal('Video Production', 'Advanced post-production using Premiere Pro & CapCut Pro for short-form scroll-stopping visual content.')">
+      <h4>03. Premiere Pro & CapCut Video Specialist</h4>
+      <span style="color:var(--accent);">↗</span>
     </div>
-  </div>
-</section>
-
-<section id="contact" class="cta">
-  <div class="container">
-    <div class="cta-box reveal">
-      <div class="section-kicker">06 / Let’s work together</div>
-      <h2>Have a brand that deserves more attention?</h2>
-      <p>Let’s build a social presence that looks professional, connects with the right audience and creates room for sustainable growth.</p>
-      <div class="actions">
-        <a class="btn primary" href="mailto:your-email@gmail.com">Email Me ↗</a>
-        <a class="btn ghost" href="https://www.upwork.com/" target="_blank" rel="noopener">Hire Me on Upwork ↗</a>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 </main>
 
-<footer class="container footer">
-  <span>© 2026 Md. Mehedi Hasan Rana. All rights reserved.</span>
-  <span>Social Media · Content · Growth</span>
-</footer>
+<div class="modal-bg" id="modal">
+  <div class="modal-content">
+    <h3 id="mTitle" style="font-family:'Syne'; font-size:24px; color:var(--accent); margin-bottom:12px;"></h3>
+    <p id="mDesc" style="color:var(--muted); line-height:1.6;"></p>
+    <button onclick="closeModal()" style="margin-top:20px; background:var(--accent); border:none; padding:10px 20px; border-radius:100px; font-weight:700; cursor:pointer;">Close</button>
+  </div>
+</div>
 
 <script>
-// Particle Background Effect
-const canvas = document.getElementById('particleCanvas');
+// Particles
+const canvas = document.getElementById('canvas3d');
 const ctx = canvas.getContext('2d');
-let particles = [];
+let pts = [];
 
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
+function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+window.addEventListener('resize', resize);
+resize();
 
-class Particle {
-  constructor() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 2 + 0.5;
-    this.speedX = Math.random() * 0.5 - 0.25;
-    this.speedY = Math.random() * 0.5 - 0.25;
-    this.opacity = Math.random() * 0.5 + 0.2;
-  }
-  update() {
-    this.x += this.speedX;
-    this.y += this.speedY;
-    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-  }
-  draw() {
-    ctx.fillStyle = `rgba(119, 255, 53, ${this.opacity})`;
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fill();
-  }
-}
-
-function initParticles() {
-  particles = [];
-  const count = Math.floor((canvas.width * canvas.height) / 18000);
-  for (let i = 0; i < count; i++) {
-    particles.push(new Particle());
-  }
-}
-initParticles();
-
-function animateParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => {
-    p.update();
-    p.draw();
+for(let i=0; i<50; i++) {
+  pts.push({
+    x: Math.random()*canvas.width, y: Math.random()*canvas.height,
+    r: Math.random()*1.5 + 0.5, dx: (Math.random()-0.5)*0.4, dy: (Math.random()-0.5)*0.4
   });
-  requestAnimationFrame(animateParticles);
 }
-animateParticles();
 
-// Scroll Reveal Animation
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-// Portfolio Filter
-const buttons = document.querySelectorAll('.filter button');
-const projects = document.querySelectorAll('.project');
-buttons.forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    buttons.forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const f=btn.dataset.filter;
-    projects.forEach(p=>{
-      p.style.display=(f==='all'||p.dataset.cat===f)?'block':'none';
-    });
+function draw() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle = 'rgba(0,255,135,0.3)';
+  pts.forEach(p => {
+    ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2); ctx.fill();
+    p.x += p.dx; p.y += p.dy;
+    if(p.x<0 || p.x>canvas.width) p.dx *= -1;
+    if(p.y<0 || p.y>canvas.height) p.dy *= -1;
   });
-});
+  requestAnimationFrame(draw);
+}
+draw();
 
-// Mobile Navigation Toggle
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
-menuToggle.addEventListener('click', ()=>{
-  navLinks.classList.toggle('active');
-});
+// Scroll Animations
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('show'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// Experience Modal Logic
-const expData = [
-  {
-    title: "Meta Ads Specialist | Facebook & Instagram Advertising",
-    desc: "As a dedicated Meta Ads Specialist, I design and manage high-converting ad campaigns across Facebook and Instagram tailored to maximize your ROI. From setting up Meta Pixel and custom audience targeting to scaling sales, lead generation, and remarketing campaigns, I bring a performance-driven approach that turns ad spend into consistent business growth.",
-    keywords: ["Meta Ads Specialist", "Facebook Ads", "Instagram Ads", "Audience Targeting", "Meta Pixel", "Lead Generation", "Retargeting", "A/B Testing", "eCommerce Ads", "Shopify Ads"]
-  },
-  {
-    title: "TikTok Ads Specialist",
-    desc: "I specialize in creating high-converting TikTok ad campaigns that leverage viral video formats and smart audience targeting. By combining creative strategy with TikTok Business Center tools, I build Spark Ads and video conversion campaigns that boost brand awareness, lower acquisition costs, and drive predictable sales for eCommerce brands.",
-    keywords: ["TikTok Advertising", "Spark Ads", "TikTok Pixel", "Conversion Campaigns", "Creative Strategy", "Product Catalog Ads", "Campaign Scaling", "Growth Marketing"]
-  },
-  {
-    title: "Professional Video Editor | Adobe Premiere Pro & CapCut Pro",
-    desc: "I offer full-suite video post-production services using Adobe Premiere Pro and CapCut Pro. Specializing in short-form content like Instagram Reels, TikToks, and YouTube Shorts, I craft visual stories with dynamic motion graphics, sound design, color grading, and engaging captions designed to hold attention and drive high organic engagement.",
-    keywords: ["Adobe Premiere Pro", "CapCut Pro", "Reels Editing", "TikTok Video Editing", "Motion Graphics", "Color Grading", "Sound Design", "Speed Ramping", "UGC Video Editing"]
-  },
-  {
-    title: "Canva Graphic Designer & Video Editing Specialist",
-    desc: "I create stunning visual assets and editable Canva templates that keep your brand looking cohesive and professional across all channels. From high-converting carousel posts, YouTube thumbnails, and digital ads to full brand kits and marketing materials, I deliver high-quality designs fast and efficiently.",
-    keywords: ["Canva Pro", "Carousel Design", "Social Media Graphics", "Brand Identity", "Pitch Deck Design", "Digital Ads Design", "Editable Templates", "Visual Branding"]
-  },
-  {
-    title: "Social Media Marketing Consultant",
-    desc: "I help brands cut through the noise with data-backed social media strategies. Through deep competitor analysis, market positioning, and detailed analytics reporting, I build custom action plans that elevate brand development, improve customer reach, and achieve measurable marketing milestones.",
-    keywords: ["Social Media Strategy", "Brand Development", "Competitor Analysis", "Analytics & Reporting", "Marketing Campaigns"]
-  },
-  {
-    title: "TikTok & Instagram Growth Specialist",
-    desc: "Focused on organic reach and viral growth, I optimize your accounts to attract and retain targeted followers. My growth framework includes in-depth hashtag research, sound/trend analysis, and profile optimization to boost algorithm placement and build a loyal audience community.",
-    keywords: ["Organic Growth", "Hashtag Research", "Trend Research", "Audience Growth", "Account Optimization"]
-  },
-  {
-    title: "Video Editor & Short-Form Content Specialist",
-    desc: "Specialized in fast-paced short-form video production optimized for algorithm discovery. Using CapCut Pro, Canva, and Premiere Pro, I craft scroll-stopping Reels, TikToks, and YouTube Shorts engineered to generate maximum watch time and engagement.",
-    keywords: ["CapCut Pro", "Canva", "Adobe Premiere Pro", "TikTok Videos", "Instagram Reels", "YouTube Shorts"]
-  },
-  {
-    title: "Content Creator & Social Media Manager",
-    desc: "I provide complete end-to-end social media management—from creative content strategy and calendar planning to scheduling, audience engagement, and monthly growth tracking. I handle every detail so your brand stays active, consistent, and memorable across all social platforms.",
-    keywords: ["Content Creation", "Social Media Management", "Content Scheduling", "Audience Engagement", "Trend Analysis", "Viral Content"]
-  }
-];
-
-const modal = document.getElementById('expModal');
-const modalClose = document.getElementById('modalClose');
-const mTitle = document.getElementById('mTitle');
-const mDesc = document.getElementById('mDesc');
-const mKw = document.getElementById('mKw');
-
-document.querySelectorAll('.exp-card').forEach(card => {
-  card.addEventListener('click', () => {
-    const idx = card.getAttribute('data-exp');
-    const data = expData[idx];
-    
-    mTitle.textContent = data.title;
-    mDesc.textContent = data.desc;
-    
-    mKw.innerHTML = '';
-    data.keywords.forEach(kw => {
-      const span = document.createElement('span');
-      span.className = 'modal-kw';
-      span.textContent = kw;
-      mKw.appendChild(span);
-    });
-    
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-modalClose.addEventListener('click', () => {
-  modal.classList.remove('active');
-  document.body.style.overflow = 'auto';
-});
-
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-  }
-});
+// Modal Logic
+function openModal(t, d) {
+  document.getElementById('mTitle').innerText = t;
+  document.getElementById('mDesc').innerText = d;
+  document.getElementById('modal').classList.add('active');
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+}
 </script>
 </body>
 </html>
