@@ -21,9 +21,10 @@ a{color:inherit;text-decoration:none}
 .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
 .logo{font-family:"Space Grotesk";font-weight:700;letter-spacing:-.04em;font-size:20px}
 .logo span{color:var(--accent)}
-.nav-links{display:flex;gap:28px;color:#cfcfcf;font-size:14px}
+.nav-links{display:flex;gap:28px;color:#cfcfcf;font-size:14px;align-items:center}
 .nav-links a:hover{color:var(--accent)}
-.nav-btn{padding:10px 16px;border:1px solid var(--accent);border-radius:999px;color:var(--accent);font-weight:700;font-size:13px}
+.nav-btn{padding:10px 16px;border:1px solid var(--accent);border-radius:999px;color:var(--accent);font-weight:700;font-size:13px;transition:.25s}
+.nav-btn:hover{background:var(--accent);color:#080808}
 .hero{min-height:100vh;padding:145px 0 80px;display:grid;grid-template-columns:1.18fr .82fr;align-items:center;gap:70px}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid #2b2b2b;border-radius:999px;padding:8px 13px;color:#d4d4d4;font-size:13px;margin-bottom:25px;background:#0d0d0d}
 .dot{width:8px;height:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 18px var(--accent)}
@@ -39,7 +40,7 @@ h1 em{font-style:normal;color:var(--accent)}
 .hero-card:after{content:"";position:absolute;width:330px;height:330px;border-radius:50%;background:var(--accent);filter:blur(100px);opacity:.12}
 .profile-wrap{position:relative;z-index:2;width:min(72%,340px);aspect-ratio:1/1}
 .profile-wrap img{width:100%;height:100%;object-fit:cover;border-radius:34px;filter:saturate(.95);border:1px solid #383838}
-.badge{position:absolute;left:-28px;bottom:35px;padding:13px 16px;border:1px solid #343434;background:#0b0b0b;border-radius:16px;font-size:13px;box-shadow:0 18px 50px #000}
+.badge{position:absolute;left:-28px;bottom:35px;padding:13px 16px;border:1px solid #343434;background:#0b0b0b;border-radius:16px;font-size:13px;box-shadow:0 18px 50px #000;z-index:3}
 .badge strong{display:block;color:var(--accent);font-size:20px;font-family:"Space Grotesk"}
 .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0}
 .stat-grid{display:grid;grid-template-columns:repeat(4,1fr)}
@@ -48,7 +49,6 @@ h1 em{font-style:normal;color:var(--accent)}
 section{padding:110px 0}
 .section-kicker{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:15px}
 .section-title{font-family:"Space Grotesk";font-size:clamp(38px,5vw,68px);letter-spacing:-.055em;line-height:1}
-.section-sub{max-width:650px;color:var(--muted);margin-top:18px;font-size:17px}
 .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}
 .about-text{font-size:20px;color:#cfcfcf}
 .about-text p+p{margin-top:22px}
@@ -61,9 +61,9 @@ section{padding:110px 0}
 .icon{width:42px;height:42px;border:1px solid #353535;border-radius:12px;display:grid;place-items:center;color:var(--accent);margin-bottom:45px;font-weight:700}
 .service h3{font-family:"Space Grotesk";font-size:21px;margin-bottom:10px}
 .service p{color:var(--muted);font-size:14px}
-.work-head{display:flex;justify-content:space-between;align-items:end;gap:30px}
+.work-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
 .filter{display:flex;gap:8px;flex-wrap:wrap}
-.filter button{background:transparent;color:#aaa;border:1px solid #292929;border-radius:999px;padding:9px 13px;cursor:pointer}
+.filter button{background:transparent;color:#aaa;border:1px solid #292929;border-radius:999px;padding:9px 13px;cursor:pointer;transition:.2s}
 .filter button.active,.filter button:hover{color:#080808;background:var(--accent);border-color:var(--accent)}
 .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:45px}
 .project{border:1px solid #292929;border-radius:22px;overflow:hidden;background:#0d0d0d;transition:.3s}
@@ -86,21 +86,25 @@ section{padding:110px 0}
 .cta-box p{color:var(--muted);margin:22px 0 30px;max-width:600px}
 .footer{border-top:1px solid var(--line);padding:28px 0;color:#777;font-size:13px;display:flex;justify-content:space-between;gap:20px}
 .reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
-.menu{display:none}
+.menu-btn{display:none;background:none;border:1px solid #333;color:white;border-radius:10px;padding:8px 12px;cursor:pointer}
+
 @media(max-width:900px){
- .hero{grid-template-columns:1fr;gap:45px;padding-top:120px}.hero-card{min-height:400px}
- .stat-grid{grid-template-columns:repeat(2,1fr)}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:0}
- .about{grid-template-columns:1fr;gap:45px}.services-grid{grid-template-columns:repeat(2,1fr)}
- .work-grid{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(2,1fr)}
- .nav-links{display:none}.menu{display:block;background:none;border:1px solid #333;color:white;border-radius:10px;padding:9px 12px}
+  .hero{grid-template-columns:1fr;gap:45px;padding-top:120px}.hero-card{min-height:400px}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:0}
+  .about{grid-template-columns:1fr;gap:45px}.services-grid{grid-template-columns:repeat(2,1fr)}
+  .work-grid{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(2,1fr)}
+  .menu-btn{display:block}
+  .nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:#080808;flex-direction:column;padding:20px;border-bottom:1px solid var(--line)}
+  .nav-links.active{display:flex}
 }
 @media(max-width:620px){
- .container{width:min(100% - 28px,var(--max))}.hero{padding-bottom:55px}
- h1{font-size:56px}.hero-copy{font-size:16px}.hero-card{min-height:350px}.profile-wrap{width:68%}
- .stat-grid{grid-template-columns:1fr 1fr}.stat{padding:12px 8px}.stat b{font-size:23px}
- section{padding:78px 0}.services-grid,.work-grid,.process{grid-template-columns:1fr}
- .expertise{grid-template-columns:1fr}.work-head{align-items:start;flex-direction:column}
- .cta-box{padding:42px 25px}.footer{flex-direction:column}
+  .container{width:min(100% - 28px,var(--max))}.hero{padding-bottom:55px}
+  h1{font-size:56px}.hero-copy{font-size:16px}.hero-card{min-height:350px}.profile-wrap{width:68%}
+  .badge{left:10px;bottom:10px}
+  .stat-grid{grid-template-columns:1fr 1fr}.stat{padding:12px 8px}.stat b{font-size:23px}
+  section{padding:78px 0}.services-grid,.work-grid,.process{grid-template-columns:1fr}
+  .expertise{grid-template-columns:1fr}.work-head{align-items:flex-start;flex-direction:column}
+  .cta-box{padding:42px 25px}.footer{flex-direction:column}
 }
 </style>
 </head>
@@ -108,10 +112,14 @@ section{padding:110px 0}
 <nav class="nav">
   <div class="container nav-inner">
     <a class="logo" href="#top">MEHEDI<span>.</span></a>
-    <div class="nav-links">
-      <a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a>
+    <button class="menu-btn" id="menuToggle">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a class="nav-btn" href="#contact">Let's Talk</a>
     </div>
-    <a class="nav-btn" href="#contact">Let's Talk</a>
   </div>
 </nav>
 
@@ -127,7 +135,9 @@ section{padding:110px 0}
     </div>
   </div>
   <div class="hero-card reveal">
-    <div class="profile-wrap"><img src="assets/profile.jpg" alt="Professional profile photo"></div>
+    <div class="profile-wrap">
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Md. Mehedi Hasan Rana">
+    </div>
     <div class="badge"><strong>6+ Years</strong>Social media experience</div>
   </div>
 </section>
@@ -182,19 +192,22 @@ section{padding:110px 0}
     <div class="work-head">
       <div class="reveal"><div class="section-kicker">03 / Selected Work</div><h2 class="section-title">A few projects<br>I’m proud of.</h2></div>
       <div class="filter reveal">
-        <button class="active" data-filter="all">All</button><button data-filter="growth">Growth</button><button data-filter="content">Content</button><button data-filter="video">Video</button>
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="growth">Growth</button>
+        <button data-filter="content">Content</button>
+        <button data-filter="video">Video</button>
       </div>
     </div>
     <div class="work-grid">
-      <article class="project reveal" data-cat="growth"><div class="project-img"><img src="assets/meta-ads.jpg" alt="Meta Ads project"></div><div class="project-body"><span class="tag">Paid Social</span><h3>Meta Ads Performance & Optimization</h3><p>Conversion-focused creative and performance support for social advertising.</p></div></article>
-      <article class="project reveal" data-cat="growth"><div class="project-img"><img src="assets/instagram-growth.jpg" alt="Instagram growth case study"></div><div class="project-body"><span class="tag">Instagram Growth</span><h3>Instagram Growth & Organic Content Strategy</h3><p>Content-led growth strategy built around consistency and audience engagement.</p></div></article>
-      <article class="project reveal" data-cat="content"><div class="project-img"><img src="assets/social-content.jpg" alt="Social content project"></div><div class="project-body"><span class="tag">Content Marketing</span><h3>Full-Service Social Media Content</h3><p>Product-focused social creative designed for brand awareness and engagement.</p></div></article>
-      <article class="project reveal" data-cat="video"><div class="project-img"><img src="assets/reels-editing.jpg" alt="Reels editing project"></div><div class="project-body"><span class="tag">Short-form Video</span><h3>Reels & TikTok Content Editing</h3><p>Fast-paced social edits with captions, transitions and platform-ready formatting.</p></div></article>
-      <article class="project reveal" data-cat="growth"><div class="project-img"><img src="assets/reels-growth.jpg" alt="Reels growth project"></div><div class="project-body"><span class="tag">Organic Growth</span><h3>IG & TikTok Reels Growth</h3><p>Short-form content strategy paired with consistent publishing and optimization.</p></div></article>
-      <article class="project reveal" data-cat="content"><div class="project-img"><img src="assets/social-content-creator.jpg" alt="Social media content creator project"></div><div class="project-body"><span class="tag">Content Creation</span><h3>Instagram, TikTok & YouTube Shorts</h3><p>Multi-platform content designed to keep brands active and audience-focused.</p></div></article>
-      <article class="project reveal" data-cat="content"><div class="project-img"><img src="assets/social-management.jpg" alt="Social management project"></div><div class="project-body"><span class="tag">Social Management</span><h3>Social Media Management</h3><p>Content planning and account management for consistent brand communication.</p></div></article>
-      <article class="project reveal" data-cat="content"><div class="project-img"><img src="assets/real-estate.jpg" alt="Real estate social media project"></div><div class="project-body"><span class="tag">Real Estate</span><h3>Real Estate Social Content</h3><p>Professional visual content created to support property marketing and brand presence.</p></div></article>
-      <article class="project reveal" data-cat="video"><div class="project-img"><img src="assets/tiktok-content.jpg" alt="TikTok and Instagram content project"></div><div class="project-body"><span class="tag">TikTok + Instagram</span><h3>High-Volume Short-form Content</h3><p>Content production workflow built for multiple accounts and consistent daily publishing.</p></div></article>
+      <article class="project reveal" data-cat="growth"><div class="project-img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Meta Ads project"></div><div class="project-body"><span class="tag">Paid Social</span><h3>Meta Ads Performance & Optimization</h3><p>Conversion-focused creative and performance support for social advertising.</p></div></article>
+      <article class="project reveal" data-cat="growth"><div class="project-img"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80" alt="Instagram growth case study"></div><div class="project-body"><span class="tag">Instagram Growth</span><h3>Instagram Growth & Organic Content Strategy</h3><p>Content-led growth strategy built around consistency and audience engagement.</p></div></article>
+      <article class="project reveal" data-cat="content"><div class="project-img"><img src="https://images.unsplash.com/photo-1611162616075-c1796d9368bf?auto=format&fit=crop&w=600&q=80" alt="Social content project"></div><div class="project-body"><span class="tag">Content Marketing</span><h3>Full-Service Social Media Content</h3><p>Product-focused social creative designed for brand awareness and engagement.</p></div></article>
+      <article class="project reveal" data-cat="video"><div class="project-img"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=600&q=80" alt="Reels editing project"></div><div class="project-body"><span class="tag">Short-form Video</span><h3>Reels & TikTok Content Editing</h3><p>Fast-paced social edits with captions, transitions and platform-ready formatting.</p></div></article>
+      <article class="project reveal" data-cat="growth"><div class="project-img"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Reels growth project"></div><div class="project-body"><span class="tag">Organic Growth</span><h3>IG & TikTok Reels Growth</h3><p>Short-form content strategy paired with consistent publishing and optimization.</p></div></article>
+      <article class="project reveal" data-cat="content"><div class="project-img"><img src="https://images.unsplash.com/photo-1542744094-3a3121699563?auto=format&fit=crop&w=600&q=80" alt="Social media content creator project"></div><div class="project-body"><span class="tag">Content Creation</span><h3>Instagram, TikTok & YouTube Shorts</h3><p>Multi-platform content designed to keep brands active and audience-focused.</p></div></article>
+      <article class="project reveal" data-cat="content"><div class="project-img"><img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=600&q=80" alt="Social management project"></div><div class="project-body"><span class="tag">Social Management</span><h3>Social Media Management</h3><p>Content planning and account management for consistent brand communication.</p></div></article>
+      <article class="project reveal" data-cat="content"><div class="project-img"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="Real estate social media project"></div><div class="project-body"><span class="tag">Real Estate</span><h3>Real Estate Social Content</h3><p>Professional visual content created to support property marketing and brand presence.</p></div></article>
+      <article class="project reveal" data-cat="video"><div class="project-img"><img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=format&fit=crop&w=600&q=80" alt="TikTok and Instagram content project"></div><div class="project-body"><span class="tag">TikTok + Instagram</span><h3>High-Volume Short-form Content</h3><p>Content production workflow built for multiple accounts and consistent daily publishing.</p></div></article>
     </div>
   </div>
 </section>
@@ -230,7 +243,7 @@ section{padding:110px 0}
       <h2>Have a brand that deserves more attention?</h2>
       <p>Let’s build a social presence that looks professional, connects with the right audience and creates room for sustainable growth.</p>
       <div class="actions">
-        <a class="btn primary" href="mailto:your@email.com">Email Me ↗</a>
+        <a class="btn primary" href="mailto:your-email@gmail.com">Email Me ↗</a>
         <a class="btn ghost" href="https://www.upwork.com/" target="_blank" rel="noopener">Hire Me on Upwork ↗</a>
       </div>
     </div>
@@ -244,11 +257,13 @@ section{padding:110px 0}
 </footer>
 
 <script>
+// Scroll Animation
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
+// Portfolio Filter
 const buttons = document.querySelectorAll('.filter button');
 const projects = document.querySelectorAll('.project');
 buttons.forEach(btn=>{
@@ -260,6 +275,13 @@ buttons.forEach(btn=>{
       p.style.display=(f==='all'||p.dataset.cat===f)?'block':'none';
     });
   });
+});
+
+// Mobile Navigation Toggle
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle.addEventListener('click', ()=>{
+  navLinks.classList.toggle('active');
 });
 </script>
 </body>
