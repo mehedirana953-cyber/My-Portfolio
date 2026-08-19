@@ -51,7 +51,6 @@ h1 em{font-style:normal;color:var(--accent)}
 .stat b{font-family:"Space Grotesk";font-size:30px;letter-spacing:-.04em}
 .stat span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
 
-/* Updated Social Platforms List Style */
 .platforms-list{display:block;font-size:14px;color:#e0e0e0;font-weight:600;line-height:1.45;word-break:break-word}
 
 section{padding:110px 0}
@@ -60,9 +59,18 @@ section{padding:110px 0}
 .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}
 .about-text{font-size:20px;color:#cfcfcf}
 .about-text p+p{margin-top:22px}
-.expertise{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
-.skill{padding:18px;border:1px solid #292929;border-radius:16px;background:#0e0e0e;display:flex;justify-content:space-between;gap:15px}
-.skill span:last-child{color:var(--accent)}
+
+/* Updated Expertise & Skill Layout */
+.expertise-group{margin-top:25px}
+.group-title{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:10px;font-weight:700}
+.expertise-main{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.expertise-supporting{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+
+.skill{padding:16px;border:1px solid #292929;border-radius:16px;background:#0e0e0e;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:15px;transition:.25s}
+.skill:hover{border-color:var(--accent);transform:translateY(-2px)}
+.skill.primary-skill{background:linear-gradient(145deg, #161616, #0e0e0e);border-color:#3a3a3a;font-weight:600}
+.skill span:last-child{color:var(--accent);font-weight:700}
+
 .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:45px}
 .service{min-height:230px;padding:25px;border:1px solid #292929;border-radius:22px;background:linear-gradient(145deg,#111,#0b0b0b);transition:.3s}
 .service:hover{transform:translateY(-7px);border-color:#4d4d4d}
@@ -110,7 +118,7 @@ section{padding:110px 0}
   h1{font-size:32px}.hero-copy{font-size:16px}
   .stat-grid{grid-template-columns:1fr 1fr}.stat{padding:12px 8px}.stat b{font-size:23px}
   section{padding:78px 0}.services-grid,.work-grid,.process{grid-template-columns:1fr}
-  .expertise{grid-template-columns:1fr}.work-head{align-items:flex-start;flex-direction:column}
+  .expertise-main, .expertise-supporting{grid-template-columns:1fr}
   .cta-box{padding:42px 25px}.footer{flex-direction:column}
 }
 </style>
@@ -175,14 +183,39 @@ section{padding:110px 0}
   <div class="about-text reveal">
     <p>For over 6 years, I have helped businesses, startups, personal brands and eCommerce brands strengthen their online presence through social media management, content creation, short-form video and organic growth strategies.</p>
     <p>I focus on creating content that looks professional, feels relevant and gives brands a consistent system for staying visible and connected with the right audience.</p>
-    <div class="expertise">
-      <div class="skill"><span>Social Media Management</span><span>↗</span></div>
-      <div class="skill"><span>Content Strategy</span><span>↗</span></div>
-      <div class="skill"><span>Instagram Growth</span><span>↗</span></div>
-      <div class="skill"><span>TikTok Growth</span><span>↗</span></div>
-      <div class="skill"><span>Reels & Short-form Video</span><span>↗</span></div>
-      <div class="skill"><span>Organic Growth</span><span>↗</span></div>
+    
+    <!-- Primary & Secondary Focus -->
+    <div class="expertise-group">
+      <div class="group-title">Core Focus</div>
+      <div class="expertise-main">
+        <div class="skill primary-skill"><span>Social Media Management</span><span>↗</span></div>
+        <div class="skill primary-skill"><span>Instagram & TikTok Growth</span><span>↗</span></div>
+      </div>
     </div>
+
+    <!-- Supporting Services -->
+    <div class="expertise-group">
+      <div class="group-title">Supporting Services & Skills</div>
+      <div class="expertise-supporting">
+        <div class="skill"><span>Content Creation</span><span>↗</span></div>
+        <div class="skill"><span>Content Strategy</span><span>↗</span></div>
+        <div class="skill"><span>Reels Creation</span><span>↗</span></div>
+        <div class="skill"><span>Short-form Video</span><span>↗</span></div>
+        <div class="skill"><span>Organic Growth</span><span>↗</span></div>
+        <div class="skill"><span>Content Planning</span><span>↗</span></div>
+        <div class="skill"><span>Content Scheduling</span><span>↗</span></div>
+        <div class="skill"><span>Audience Engagement</span><span>↗</span></div>
+        <div class="skill"><span>Meta Ads Support</span><span>↗</span></div>
+        <div class="skill"><span>Profile Optimization</span><span>↗</span></div>
+        <div class="skill"><span>Virtual Assistant</span><span>↗</span></div>
+        <div class="skill"><span>TikTok Ads Specialist</span><span>↗</span></div>
+        <div class="skill"><span>Adobe Premiere Pro Expert</span><span>↗</span></div>
+        <div class="skill"><span>CapCut Pro Expert</span><span>↗</span></div>
+        <div class="skill"><span>Canva Pro Expert</span><span>↗</span></div>
+        <div class="skill"><span>Social Media Marketing</span><span>↗</span></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
