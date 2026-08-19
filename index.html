@@ -103,10 +103,11 @@ h1 em{font-style:normal;color:var(--accent); text-shadow:0 0 20px rgba(119,255,5
 .btn.primary{background:var(--accent);color:#071004;border-color:var(--accent);box-shadow:0 0 25px rgba(119,255,53,0.3)}
 .btn.primary:hover{box-shadow:0 0 35px rgba(119,255,53,0.6);transform:translateY(-3px)}
 
-/* STYLISH CIRCLE & BLOB HERO IMAGE FRAME */
+/* STYLISH CIRCLE & BLOB HERO IMAGE FRAME WITH CAPTION */
 .hero-image-wrapper {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -117,7 +118,8 @@ h1 em{font-style:normal;color:var(--accent); text-shadow:0 0 20px rgba(119,255,5
   content: '';
   position: absolute;
   width: 90%;
-  height: 90%;
+  height: 80%;
+  top: 0;
   border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
   background: linear-gradient(135deg, var(--accent) 0%, #00d2ff 100%);
   opacity: 0.25;
@@ -133,11 +135,10 @@ h1 em{font-style:normal;color:var(--accent); text-shadow:0 0 20px rgba(119,255,5
 
 .hero-image-wrapper img {
   width: 100%;
-  max-width: 550px;
-  height: 550px;
+  max-width: 500px;
+  height: 500px;
   object-fit: cover;
   object-position: top center;
-  /* Stylish Asymmetric Circle / Organic Blob Clip Path */
   border-radius: 50%;
   border: 2px solid rgba(119, 255, 53, 0.4);
   box-shadow: 0 0 30px rgba(119, 255, 53, 0.2);
@@ -150,13 +151,56 @@ h1 em{font-style:normal;color:var(--accent); text-shadow:0 0 20px rgba(119,255,5
   box-shadow: 0 0 50px rgba(119, 255, 53, 0.4);
 }
 
+/* Stylish Caption Below Image */
+.hero-caption-card {
+  margin-top: 25px;
+  background: rgba(20, 20, 28, 0.75);
+  border: 1px solid rgba(119, 255, 53, 0.3);
+  padding: 14px 28px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.hero-caption-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(119, 255, 53, 0.25);
+}
+
+.hero-caption-card h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.hero-caption-card p {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Stats Section */
 .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0;background:rgba(20,20,30,0.3);backdrop-filter:blur(10px)}
 .stat-grid{display:grid;grid-template-columns:repeat(4,1fr)}
 .stat{padding:10px 24px;border-right:1px solid var(--line)}
 .stat:last-child{border:0}
 .stat b{font-family:"Space Grotesk";font-size:30px;letter-spacing:-.04em;color:#fff}
 .stat span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
-.platforms-list{display:block;font-size:14px;color:#e0e0e0;font-weight:600;line-height:1.45;word-break:break-word}
+
+/* Bold Platforms List */
+.platforms-list{
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  word-break: break-word;
+}
 
 section{padding:110px 0}
 .section-kicker{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:15px;text-shadow:0 0 10px rgba(119,255,53,0.3)}
@@ -245,6 +289,7 @@ section{padding:110px 0}
   .container{width:min(100% - 28px,var(--max))}.hero{padding-bottom:55px}
   h1{font-size:32px}.hero-copy{font-size:16px}
   .hero-image-wrapper img { max-width: 280px; height: 280px; }
+  .platforms-list { font-size: 16px; }
   .stat-grid{grid-template-columns:1fr 1fr}.stat{padding:12px 8px}.stat b{font-size:23px}
   section{padding:78px 0}.services-grid,.work-grid,.process{grid-template-columns:1fr}
   .expertise{grid-template-columns:1fr}
@@ -298,6 +343,11 @@ section{padding:110px 0}
   
   <div class="hero-image-wrapper reveal">
     <img src="t-1.png" alt="Md. Mehedi Hasan Rana">
+    <!-- Stylish Headline Below Image -->
+    <div class="hero-caption-card">
+      <h3>Md. Mehedi Hasan Rana</h3>
+      <p>6+ Years of Experience | Social Media Manager</p>
+    </div>
   </div>
 </section>
 
@@ -307,7 +357,8 @@ section{padding:110px 0}
     <div class="stat"><b>100%</b><span>Client-focused workflow</span></div>
     <div class="stat"><b>12+</b><span>Portfolio Projects Shown</span></div>
     <div class="stat">
-      <span class="platforms-list">Instagram • TikTok • Facebook • LinkedIn • YouTube • Pinterest • Reddit</span>
+      <!-- BOLD PLATFORMS LIST -->
+      <b class="platforms-list">Instagram • TikTok • Facebook • LinkedIn • YouTube • Pinterest • Reddit</b>
       <span>Core Growth Platforms</span>
     </div>
   </div>
