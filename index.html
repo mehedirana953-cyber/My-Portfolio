@@ -60,23 +60,20 @@ section{padding:110px 0}
 .about-text{font-size:20px;color:#cfcfcf}
 .about-text p+p{margin-top:22px}
 
-/* Updated Expertise & Skill Layout */
-.expertise-group{margin-top:25px}
-.group-title{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:10px;font-weight:700}
-.expertise-main{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.expertise-supporting{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
-
-.skill{padding:16px;border:1px solid #292929;border-radius:16px;background:#0e0e0e;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:15px;transition:.25s}
+/* Original 6 Skills Grid in About Section */
+.expertise{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+.skill{padding:18px;border:1px solid #292929;border-radius:16px;background:#0e0e0e;display:flex;justify-content:space-between;gap:15px;transition:.25s}
 .skill:hover{border-color:var(--accent);transform:translateY(-2px)}
-.skill.primary-skill{background:linear-gradient(145deg, #161616, #0e0e0e);border-color:#3a3a3a;font-weight:600}
-.skill span:last-child{color:var(--accent);font-weight:700}
+.skill span:last-child{color:var(--accent)}
 
+/* Enhanced Services Grid Layout */
 .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:45px}
 .service{min-height:230px;padding:25px;border:1px solid #292929;border-radius:22px;background:linear-gradient(145deg,#111,#0b0b0b);transition:.3s}
 .service:hover{transform:translateY(-7px);border-color:#4d4d4d}
-.icon{width:42px;height:42px;border:1px solid #353535;border-radius:12px;display:grid;place-items:center;color:var(--accent);margin-bottom:45px;font-weight:700}
-.service h3{font-family:"Space Grotesk";font-size:21px;margin-bottom:10px}
+.icon{width:42px;height:42px;border:1px solid #353535;border-radius:12px;display:grid;place-items:center;color:var(--accent);margin-bottom:30px;font-weight:700}
+.service h3{font-family:"Space Grotesk";font-size:20px;margin-bottom:10px}
 .service p{color:var(--muted);font-size:14px}
+
 .work-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
 .filter{display:flex;gap:8px;flex-wrap:wrap}
 .filter button{background:transparent;color:#aaa;border:1px solid #292929;border-radius:999px;padding:9px 13px;cursor:pointer;transition:.2s}
@@ -118,7 +115,7 @@ section{padding:110px 0}
   h1{font-size:32px}.hero-copy{font-size:16px}
   .stat-grid{grid-template-columns:1fr 1fr}.stat{padding:12px 8px}.stat b{font-size:23px}
   section{padding:78px 0}.services-grid,.work-grid,.process{grid-template-columns:1fr}
-  .expertise-main, .expertise-supporting{grid-template-columns:1fr}
+  .expertise{grid-template-columns:1fr}
   .cta-box{padding:42px 25px}.footer{flex-direction:column}
 }
 </style>
@@ -184,38 +181,15 @@ section{padding:110px 0}
     <p>For over 6 years, I have helped businesses, startups, personal brands and eCommerce brands strengthen their online presence through social media management, content creation, short-form video and organic growth strategies.</p>
     <p>I focus on creating content that looks professional, feels relevant and gives brands a consistent system for staying visible and connected with the right audience.</p>
     
-    <!-- Primary & Secondary Focus -->
-    <div class="expertise-group">
-      <div class="group-title">Core Focus</div>
-      <div class="expertise-main">
-        <div class="skill primary-skill"><span>Social Media Management</span><span>↗</span></div>
-        <div class="skill primary-skill"><span>Instagram & TikTok Growth</span><span>↗</span></div>
-      </div>
+    <!-- Restored Original 6 Core Options -->
+    <div class="expertise">
+      <div class="skill"><span>Social Media Management</span><span>↗</span></div>
+      <div class="skill"><span>Content Strategy</span><span>↗</span></div>
+      <div class="skill"><span>Instagram Growth</span><span>↗</span></div>
+      <div class="skill"><span>TikTok Growth</span><span>↗</span></div>
+      <div class="skill"><span>Reels & Short-form Video</span><span>↗</span></div>
+      <div class="skill"><span>Organic Growth</span><span>↗</span></div>
     </div>
-
-    <!-- Supporting Services -->
-    <div class="expertise-group">
-      <div class="group-title">Supporting Services & Skills</div>
-      <div class="expertise-supporting">
-        <div class="skill"><span>Content Creation</span><span>↗</span></div>
-        <div class="skill"><span>Content Strategy</span><span>↗</span></div>
-        <div class="skill"><span>Reels Creation</span><span>↗</span></div>
-        <div class="skill"><span>Short-form Video</span><span>↗</span></div>
-        <div class="skill"><span>Organic Growth</span><span>↗</span></div>
-        <div class="skill"><span>Content Planning</span><span>↗</span></div>
-        <div class="skill"><span>Content Scheduling</span><span>↗</span></div>
-        <div class="skill"><span>Audience Engagement</span><span>↗</span></div>
-        <div class="skill"><span>Meta Ads Support</span><span>↗</span></div>
-        <div class="skill"><span>Profile Optimization</span><span>↗</span></div>
-        <div class="skill"><span>Virtual Assistant</span><span>↗</span></div>
-        <div class="skill"><span>TikTok Ads Specialist</span><span>↗</span></div>
-        <div class="skill"><span>Adobe Premiere Pro Expert</span><span>↗</span></div>
-        <div class="skill"><span>CapCut Pro Expert</span><span>↗</span></div>
-        <div class="skill"><span>Canva Pro Expert</span><span>↗</span></div>
-        <div class="skill"><span>Social Media Marketing</span><span>↗</span></div>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -223,15 +197,25 @@ section{padding:110px 0}
   <div class="container">
     <div class="section-kicker reveal">02 / Services</div>
     <h2 class="section-title reveal">What I can do<br><em style="color:var(--accent)">for your brand.</em></h2>
+    
+    <!-- Expanded Services List including requested additions -->
     <div class="services-grid">
       <article class="service reveal"><div class="icon">01</div><h3>Social Media Management</h3><p>Consistent account management, scheduling, engagement and optimization built around your brand goals.</p></article>
       <article class="service reveal"><div class="icon">02</div><h3>Content Creation</h3><p>Scroll-stopping posts, captions, creative concepts and content systems designed for consistency.</p></article>
-      <article class="service reveal"><div class="icon">03</div><h3>Instagram & TikTok</h3><p>Platform-specific content and organic growth strategies for stronger reach, engagement and visibility.</p></article>
-      <article class="service reveal"><div class="icon">04</div><h3>Reels & Short Video</h3><p>Short-form editing with strong hooks, pacing, captions, transitions and social-first storytelling.</p></article>
-      <article class="service reveal"><div class="icon">05</div><h3>Content Strategy</h3><p>Content pillars, calendars, trend research and practical plans that turn ideas into repeatable output.</p></article>
-      <article class="service reveal"><div class="icon">06</div><h3>Organic Growth</h3><p>Audience-focused optimization and engagement systems designed for sustainable social growth.</p></article>
+      <article class="service reveal"><div class="icon">03</div><h3>Instagram & TikTok Growth</h3><p>Platform-specific content and organic growth strategies for stronger reach, engagement and visibility.</p></article>
+      <article class="service reveal"><div class="icon">04</div><h3>Reels & Short-form Video</h3><p>Short-form editing with strong hooks, pacing, captions, transitions and social-first storytelling.</p></article>
+      <article class="service reveal"><div class="icon">05</div><h3>Content Strategy & Planning</h3><p>Content pillars, calendars, trend research and practical plans that turn ideas into repeatable output.</p></article>
+      <article class="service reveal"><div class="icon">06</div><h3>Organic Growth & Engagement</h3><p>Audience-focused optimization and engagement systems designed for sustainable social growth.</p></article>
       <article class="service reveal"><div class="icon">07</div><h3>Meta Ads Support</h3><p>Campaign creative, audience-focused content and performance-minded support for paid social.</p></article>
-      <article class="service reveal"><div class="icon">08</div><h3>Brand Presence</h3><p>A cohesive social presence that keeps your brand active, professional and recognizable.</p></article>
+      <article class="service reveal"><div class="icon">08</div><h3>TikTok Ads Specialist</h3><p>Targeted TikTok ad campaigns and high-converting video creatives tailored for virality.</p></article>
+      <article class="service reveal"><div class="icon">09</div><h3>Profile Optimization</h3><p>Professional SEO bio setup, highlight covers, link-in-bio trees, and overall brand aesthetic setup.</p></article>
+      <article class="service reveal"><div class="icon">10</div><h3>Content Scheduling & Publishing</h3><p>Organized posting workflows utilizing top management tools to ensure maximum peak-time reach.</p></article>
+      <article class="service reveal"><div class="icon">11</div><h3>Virtual Assistant (Social Media)</h3><p>Daily account maintenance, DM management, comment moderation, and routine administrative support.</p></article>
+      <article class="service reveal"><div class="icon">12</div><h3>Social Media Marketing</h3><p>End-to-end multi-platform marketing strategies to build brand loyalty and generate leads.</p></article>
+      <article class="service reveal"><div class="icon">13</div><h3>Adobe Premiere Pro Editing</h3><p>Professional video post-production, advanced color grading, motion graphics, and audio polishing.</p></article>
+      <article class="service reveal"><div class="icon">14</div><h3>CapCut Pro Video Specialist</h3><p>Fast-turnaround short video edits, trendy sound selection, captions, and viral effects.</p></article>
+      <article class="service reveal"><div class="icon">15</div><h3>Canva Pro Design Expert</h3><p>Custom graphic design, carousel posts, story templates, and visual brand assets.</p></article>
+      <article class="service reveal"><div class="icon">16</div><h3>Brand Presence Building</h3><p>A cohesive social presence that keeps your brand active, professional and highly recognizable.</p></article>
     </div>
   </div>
 </section>
