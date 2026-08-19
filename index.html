@@ -60,13 +60,11 @@ section{padding:110px 0}
 .about-text{font-size:20px;color:#cfcfcf}
 .about-text p+p{margin-top:22px}
 
-/* Original 6 Skills Grid in About Section */
 .expertise{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
 .skill{padding:18px;border:1px solid #292929;border-radius:16px;background:#0e0e0e;display:flex;justify-content:space-between;gap:15px;transition:.25s}
 .skill:hover{border-color:var(--accent);transform:translateY(-2px)}
 .skill span:last-child{color:var(--accent)}
 
-/* Enhanced Services Grid Layout */
 .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:45px}
 .service{min-height:230px;padding:25px;border:1px solid #292929;border-radius:22px;background:linear-gradient(145deg,#111,#0b0b0b);transition:.3s}
 .service:hover{transform:translateY(-7px);border-color:#4d4d4d}
@@ -91,8 +89,12 @@ section{padding:110px 0}
 .process{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:45px}
 .step{padding:24px;border-top:1px solid #3a3a3a}
 .step-no{color:var(--accent);font-family:"Space Grotesk";font-size:14px}.step h3{margin:32px 0 8px;font-family:"Space Grotesk";font-size:21px}.step p{color:var(--muted);font-size:14px}
-.tools{display:flex;flex-wrap:wrap;gap:10px;margin-top:35px}
-.tool{border:1px solid #2b2b2b;background:#0d0d0d;padding:12px 16px;border-radius:999px;color:#d0d0d0}
+
+/* Enhanced Tools Grid styling */
+.tools{display:flex;flex-wrap:wrap;gap:12px;margin-top:35px}
+.tool{border:1px solid #2b2b2b;background:#0d0d0d;padding:12px 20px;border-radius:999px;color:#d0d0d0;font-size:14px;font-weight:500;transition:.25s;display:inline-flex;align-items:center;gap:6px}
+.tool:hover{border-color:var(--accent);color:#fff;background:#141414;transform:translateY(-2px)}
+
 .cta{padding:80px 0 110px}
 .cta-box{border:1px solid #303030;border-radius:30px;padding:70px;position:relative;overflow:hidden;background:radial-gradient(circle at 80% 20%,rgba(119,255,53,.12),transparent 35%),#0e0e0e}
 .cta-box h2{font-family:"Space Grotesk";font-size:clamp(42px,6vw,78px);letter-spacing:-.06em;line-height:.98;max-width:780px}
@@ -230,55 +232,46 @@ section{padding:110px 0}
       </div>
     </div>
     <div class="work-grid">
-      <!-- Project 1 -->
       <article class="project reveal" data-cat="growth">
         <div class="project-img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Meta Ads project"></div>
         <div class="project-body"><span class="tag">Paid Social</span><h3>Meta Ads Performance & Optimization</h3><p>Conversion-focused creative and performance support for social advertising.</p></div>
       </article>
 
-      <!-- Project 2 (Updated with professional IG Growth & Analytics mockup image) -->
       <article class="project reveal" data-cat="growth">
         <div class="project-img"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=800&q=80" alt="Instagram Growth project"></div>
         <div class="project-body"><span class="tag">Instagram Growth</span><h3>Instagram Growth & Organic Content Strategy</h3><p>Content-led growth strategy built around consistency and audience engagement.</p></div>
       </article>
 
-      <!-- Project 3 (Updated Image Link) -->
       <article class="project reveal" data-cat="content">
         <div class="project-img"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Social content project"></div>
         <div class="project-body"><span class="tag">Content Marketing</span><h3>Full-Service Social Media Content</h3><p>Product-focused social creative designed for brand awareness and engagement.</p></div>
       </article>
 
-      <!-- Project 4 -->
       <article class="project reveal" data-cat="video">
         <div class="project-img"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Reels editing project"></div>
         <div class="project-body"><span class="tag">Short-form Video</span><h3>Reels & TikTok Content Editing</h3><p>Fast-paced social edits with captions, transitions and platform-ready formatting.</p></div>
       </article>
 
-      <!-- Project 5 -->
       <article class="project reveal" data-cat="growth">
         <div class="project-img"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Reels growth project"></div>
         <div class="project-body"><span class="tag">Organic Growth</span><h3>IG & TikTok Reels Growth</h3><p>Short-form content strategy paired with consistent publishing and optimization.</p></div>
       </article>
 
-      <!-- Project 6 (Updated Image Link) -->
       <article class="project reveal" data-cat="content">
         <div class="project-img"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Social media content creator project"></div>
         <div class="project-body"><span class="tag">Content Creation</span><h3>Instagram, TikTok & YouTube Shorts</h3><p>Multi-platform content designed to keep brands active and audience-focused.</p></div>
       </article>
 
-      <!-- Project 7 -->
       <article class="project reveal" data-cat="content">
         <div class="project-img"><img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="Social management project"></div>
         <div class="project-body"><span class="tag">Social Management</span><h3>Social Media Management</h3><p>Content planning and account management for consistent brand communication.</p></div>
       </article>
 
-      <!-- Project 8 -->
       <article class="project reveal" data-cat="content">
         <div class="project-img"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80" alt="Real estate social media project"></div>
         <div class="project-body"><span class="tag">Real Estate</span><h3>Real Estate Social Content</h3><p>Professional visual content created to support property marketing and brand presence.</p></div>
       </article>
 
-      <!-- Project 9 -->
       <article class="project reveal" data-cat="video">
         <div class="project-img"><img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=format&fit=crop&w=800&q=80" alt="TikTok and Instagram content project"></div>
         <div class="project-body"><span class="tag">TikTok + Instagram</span><h3>High-Volume Short-form Content</h3><p>Content production workflow built for multiple accounts and consistent daily publishing.</p></div>
@@ -304,9 +297,26 @@ section{padding:110px 0}
   <div class="container">
     <div class="section-kicker reveal">05 / Tools</div>
     <h2 class="section-title reveal">Built with the tools<br>modern brands use.</h2>
+    
+    <!-- Expanded & Organized Tools Section -->
     <div class="tools reveal">
-      <span class="tool">Canva Pro</span><span class="tool">CapCut Pro</span><span class="tool">Adobe Premiere Pro</span>
-      <span class="tool">Meta Business Suite</span><span class="tool">Metricool</span><span class="tool">ChatGPT</span><span class="tool">Google Workspace</span>
+      <span class="tool">Canva Pro</span>
+      <span class="tool">CapCut Pro</span>
+      <span class="tool">Adobe Premiere Pro</span>
+      <span class="tool">Adobe Photoshop</span>
+      <span class="tool">Meta Business Suite</span>
+      <span class="tool">Metricool</span>
+      <span class="tool">Buffer</span>
+      <span class="tool">ChatGPT</span>
+      <span class="tool">Google Gemini</span>
+      <span class="tool">Claude AI</span>
+      <span class="tool">Grok AI</span>
+      <span class="tool">AnswerThePublic</span>
+      <span class="tool">BuzzSumo</span>
+      <span class="tool">Social Blade</span>
+      <span class="tool">Notion</span>
+      <span class="tool">Zapier</span>
+      <span class="tool">Google Workspace</span>
     </div>
   </div>
 </section>
