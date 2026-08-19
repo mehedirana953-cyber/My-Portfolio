@@ -16,7 +16,7 @@
 html{scroll-behavior:smooth}
 body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);line-height:1.55;overflow-x:hidden;position:relative}
 
-/* Animated Vibrant Mesh Background */
+/* Animated Dynamic Background */
 .bg-gradient-container {
   position: fixed;
   top: 0; left: 0; width: 100vw; height: 100vh;
@@ -51,7 +51,7 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);lin
 a{color:inherit;text-decoration:none}
 .container{width:min(var(--max),calc(100% - 40px));margin:auto}
 
-/* Animated Navigation Header */
+/* Navigation Header */
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10, 10, 16, 0.7);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
 .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
 .logo{font-family:"Space Grotesk";font-weight:700;letter-spacing:-.02em;font-size:18px;text-transform:uppercase}
@@ -84,6 +84,7 @@ a{color:inherit;text-decoration:none}
 .nav-btn{padding:10px 20px;border:1px solid var(--accent);border-radius:999px;color:var(--accent);font-weight:700;font-size:13px;transition:.3s;box-shadow: 0 0 12px rgba(119, 255, 53, 0.15);}
 .nav-btn:hover{background:var(--accent);color:#080808;box-shadow: 0 0 20px rgba(119, 255, 53, 0.6);transform: translateY(-2px);}
 
+/* Hero Section */
 .hero{min-height:100vh;padding:145px 0 80px;display:grid;grid-template-columns:1.18fr .82fr;align-items:center;gap:50px}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,0.15);border-radius:999px;padding:8px 16px;color:#d4d4d4;font-size:13px;margin-bottom:25px;background:rgba(255,255,255,0.03);backdrop-filter:blur(10px)}
 .dot{width:8px;height:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 18px var(--accent);animation:pulse 2s infinite}
@@ -98,17 +99,32 @@ h1{font-family:"Space Grotesk";font-size:clamp(38px,4.8vw,68px);line-height:1.15
 h1 em{font-style:normal;color:var(--accent); text-shadow:0 0 20px rgba(119,255,53,0.3)}
 .hero-copy{margin-top:28px;max-width:670px;color:#bcbcbc;font-size:18px}
 .actions{display:flex;gap:13px;margin-top:34px;flex-wrap:wrap}
-.btn{padding:14px 24px;border-radius:999px;border:1px solid rgba(255,255,255,0.15);font-weight:700;font-size:14px;transition:.3s;backdrop-filter:blur(10px)}
+.btn{padding:14px 28px;border-radius:999px;border:1px solid rgba(255,255,255,0.15);font-weight:700;font-size:14px;transition:.3s;backdrop-filter:blur(10px);display:inline-flex;align-items:center;justify-content:center}
 .btn.primary{background:var(--accent);color:#071004;border-color:var(--accent);box-shadow:0 0 25px rgba(119,255,53,0.3)}
 .btn.primary:hover{box-shadow:0 0 35px rgba(119,255,53,0.6);transform:translateY(-3px)}
-.btn.ghost:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 0 15px rgba(119,255,53,0.2);transform:translateY(-3px)}
 
-.hero-card{position:relative;padding:24px;border:1px solid var(--line);border-radius:32px;background:var(--panel);backdrop-filter:blur(16px);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 30px 60px rgba(0,0,0,0.4)}
-.profile-wrap{position:relative;z-index:2;width:100%;max-width:360px;aspect-ratio:4/4.5;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
-.profile-wrap img{width:100%;height:100%;object-fit:cover;object-position:top;transition:0.5s}
-.hero-card:hover .profile-wrap img{transform:scale(1.03)}
-.badge{position:relative;z-index:3;margin-top:-30px;padding:12px 20px;border:1px solid rgba(255,255,255,.15);background:rgba(15,15,22,.85);backdrop-filter:blur(16px);border-radius:20px;font-size:13px;box-shadow:0 15px 35px rgba(0,0,0,.5);text-align:center;width:calc(100% - 40px);max-width:320px}
-.badge strong{display:inline-block;color:var(--accent);font-size:18px;font-family:"Space Grotesk";margin-right:6px}
+/* Clean Transparent Hero Image Container */
+.hero-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.hero-image-wrapper img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 15px 35px rgba(0,0,0,0.4));
+  transition: transform 0.4s ease;
+}
+.hero-image-wrapper:hover img {
+  transform: scale(1.02);
+}
 
 .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0;background:rgba(20,20,30,0.3);backdrop-filter:blur(10px)}
 .stat-grid{display:grid;grid-template-columns:repeat(4,1fr)}
@@ -116,7 +132,6 @@ h1 em{font-style:normal;color:var(--accent); text-shadow:0 0 20px rgba(119,255,5
 .stat:last-child{border:0}
 .stat b{font-family:"Space Grotesk";font-size:30px;letter-spacing:-.04em;color:#fff}
 .stat span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
-
 .platforms-list{display:block;font-size:14px;color:#e0e0e0;font-weight:600;line-height:1.45;word-break:break-word}
 
 section{padding:110px 0}
@@ -153,7 +168,7 @@ section{padding:110px 0}
 .project h3{font-family:"Space Grotesk";font-size:20px;margin:8px 0}
 .project p{color:var(--muted);font-size:14px}
 
-/* Interactive Experience Section Styling */
+/* Interactive Experience Section */
 .experience-list{display:flex;flex-direction:column;gap:16px;margin-top:45px}
 .exp-card{border:1px solid var(--line);border-radius:20px;padding:24px 30px;background:var(--panel);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:.3s}
 .exp-card:hover{border-color:var(--accent);background:var(--panel2);transform:translateX(8px);box-shadow:0 10px 25px rgba(119,255,53,0.15)}
@@ -162,7 +177,7 @@ section{padding:110px 0}
 .exp-arrow{color:var(--accent);font-size:20px;transition:.3s}
 .exp-card:hover .exp-arrow{transform:translateX(6px)}
 
-/* Glassmorphism Popup Modal */
+/* Popup Modal */
 .modal-overlay{position:fixed;inset:0;background:rgba(5,5,10,.85);backdrop-filter:blur(12px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
 .modal-overlay.active{display:flex}
 .modal-box{background:rgba(18,18,26,0.95);border:1px solid var(--accent);border-radius:28px;max-width:650px;width:100%;padding:40px;position:relative;box-shadow:0 0 50px rgba(119,255,53,0.2);animation:modalIn .3s cubic-bezier(0.16, 1, 0.3, 1)}
@@ -187,6 +202,7 @@ section{padding:110px 0}
 .cta-box{border:1px solid var(--line);border-radius:30px;padding:70px;position:relative;overflow:hidden;background:radial-gradient(circle at 80% 20%,rgba(119,255,53,.15),transparent 45%),var(--panel);backdrop-filter:blur(16px)}
 .cta-box h2{font-family:"Space Grotesk";font-size:clamp(42px,6vw,78px);letter-spacing:-.06em;line-height:.98;max-width:780px}
 .cta-box p{color:var(--muted);margin:22px 0 30px;max-width:600px}
+
 .footer{border-top:1px solid var(--line);padding:28px 0;color:#777;font-size:13px;display:flex;justify-content:space-between;gap:20px}
 .reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
 .menu-btn{display:none;background:none;border:1px solid #333;color:white;border-radius:10px;padding:8px 12px;cursor:pointer}
@@ -214,7 +230,7 @@ section{padding:110px 0}
 </head>
 <body>
 
-<!-- Animated Vibrant Mesh Background -->
+<!-- Animated Vibrant Background -->
 <div class="bg-gradient-container">
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
@@ -234,7 +250,7 @@ section{padding:110px 0}
       <a href="#work">Work</a>
       <a href="#other-experience">Other Experience</a>
       <a href="#process">Process</a>
-      <a class="nav-btn" href="#contact">Let's Talk</a>
+      <a class="nav-btn" href="#contact">Hire Me</a>
     </div>
   </div>
 </nav>
@@ -250,17 +266,12 @@ section{padding:110px 0}
     </h1>
     <p class="hero-copy">I'm Md. Mehedi Hasan Rana — a Social Media Manager, Content Creator and Growth Specialist helping brands build visibility, engagement and a stronger online presence through strategic content and organic growth.</p>
     <div class="actions">
-      <a class="btn primary" href="#work">Explore My Work ↗</a>
-      <a class="btn ghost" href="#contact">Start a Project</a>
+      <a class="btn primary" href="https://www.upwork.com/" target="_blank" rel="noopener">Hire Me on Upwork ↗</a>
     </div>
   </div>
-  <div class="hero-card reveal">
-    <div class="profile-wrap">
-      <img src="t-1.png" alt="Md. Mehedi Hasan Rana">
-    </div>
-    <div class="badge">
-      <strong>6+ Years</strong> Social media experience
-    </div>
+  
+  <div class="hero-image-wrapper reveal">
+    <img src="t-1.png" alt="Md. Mehedi Hasan Rana">
   </div>
 </section>
 
@@ -389,52 +400,19 @@ section{padding:110px 0}
     <h2 class="section-title reveal">Other Experiences<br><em style="color:var(--accent)">click to view details.</em></h2>
     
     <div class="experience-list reveal">
-      
-      <div class="exp-card" data-exp="0">
-        <div class="exp-title"><span class="exp-icon">01</span> Meta Ads Specialist | Facebook & Instagram Advertising</div>
-        <span class="exp-arrow">↗</span>
-      </div>
-
-      <div class="exp-card" data-exp="1">
-        <div class="exp-title"><span class="exp-icon">02</span> TikTok Ads Specialist</div>
-        <span class="exp-arrow">↗</span>
-      </div>
-
-      <div class="exp-card" data-exp="2">
-        <div class="exp-title"><span class="exp-icon">03</span> Professional Video Editor | Adobe Premiere Pro & CapCut Pro</div>
-        <span class="exp-arrow">↗</span>
-      </div>
-
-      <div class="exp-card" data-exp="3">
-        <div class="exp-title"><span class="exp-icon">04</span> Canva Graphic Designer & Video Editing Specialist</div>
-        <span class="exp-arrow">↗</span>
-      </div>
-
-      <div class="exp-card" data-exp="4">
-        <div class="exp-title"><span class="exp-icon">05</span> Social Media Marketing Consultant</div>
-        <span class="exp-arrow">↗</span>
-      </div>
-
-      <div class="exp-card" data-exp="5">
-        <div class="exp-title"><span class="exp-icon">06</span> TikTok & Instagram Growth Specialist</div>
-        <span class="exp-arrow">↗</span>
-      </div>
-
-      <div class="exp-card" data-exp="6">
-        <div class="exp-title"><span class="exp-icon">07</span> Video Editor & Short-Form Content Specialist</div>
-        <span class="exp-arrow">↗</span>
-      </div>
-
-      <div class="exp-card" data-exp="7">
-        <div class="exp-title"><span class="exp-icon">08</span> Content Creator & Social Media Manager</div>
-        <span class="exp-arrow">↗</span>
-      </div>
-
+      <div class="exp-card" data-exp="0"><div class="exp-title"><span class="exp-icon">01</span> Meta Ads Specialist | Facebook & Instagram Advertising</div><span class="exp-arrow">↗</span></div>
+      <div class="exp-card" data-exp="1"><div class="exp-title"><span class="exp-icon">02</span> TikTok Ads Specialist</div><span class="exp-arrow">↗</span></div>
+      <div class="exp-card" data-exp="2"><div class="exp-title"><span class="exp-icon">03</span> Professional Video Editor | Adobe Premiere Pro & CapCut Pro</div><span class="exp-arrow">↗</span></div>
+      <div class="exp-card" data-exp="3"><div class="exp-title"><span class="exp-icon">04</span> Canva Graphic Designer & Video Editing Specialist</div><span class="exp-arrow">↗</span></div>
+      <div class="exp-card" data-exp="4"><div class="exp-title"><span class="exp-icon">05</span> Social Media Marketing Consultant</div><span class="exp-arrow">↗</span></div>
+      <div class="exp-card" data-exp="5"><div class="exp-title"><span class="exp-icon">06</span> TikTok & Instagram Growth Specialist</div><span class="exp-arrow">↗</span></div>
+      <div class="exp-card" data-exp="6"><div class="exp-title"><span class="exp-icon">07</span> Video Editor & Short-Form Content Specialist</div><span class="exp-arrow">↗</span></div>
+      <div class="exp-card" data-exp="7"><div class="exp-title"><span class="exp-icon">08</span> Content Creator & Social Media Manager</div><span class="exp-arrow">↗</span></div>
     </div>
   </div>
 </section>
 
-<!-- POPUP MODAL COMPONENT -->
+<!-- POPUP MODAL -->
 <div class="modal-overlay" id="expModal">
   <div class="modal-box">
     <button class="modal-close" id="modalClose">&times;</button>
@@ -491,8 +469,7 @@ section{padding:110px 0}
       <h2>Have a brand that deserves more attention?</h2>
       <p>Let’s build a social presence that looks professional, connects with the right audience and creates room for sustainable growth.</p>
       <div class="actions">
-        <a class="btn primary" href="mailto:your-email@gmail.com">Email Me ↗</a>
-        <a class="btn ghost" href="https://www.upwork.com/" target="_blank" rel="noopener">Hire Me on Upwork ↗</a>
+        <a class="btn primary" href="https://www.upwork.com/" target="_blank" rel="noopener">Hire Me on Upwork ↗</a>
       </div>
     </div>
   </div>
