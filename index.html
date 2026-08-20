@@ -6,7 +6,7 @@
 <meta name="description" content="Md. Mehedi Hasan Rana — Social Media Manager, Content Creator and Growth Specialist.">
 <title>Md. Mehedi Hasan Rana — Social Media Portfolio</title>
 
-<!-- Favicon Link Updated to t-3.png -->
+<!-- Favicon Link -->
 <link rel="icon" type="image/png" href="t-3.png">
 
 <style>
@@ -138,24 +138,25 @@ h1 em{font-style:normal;color:var(--accent); text-shadow:0 0 20px rgba(119,255,5
 
 .hero-image-wrapper img {
   width: 100%;
-  max-width: 500px;
-  height: 500px;
+  max-width: 440px;
+  height: 440px;
   object-fit: cover;
-  object-position: top center;
+  object-position: center top;
   border-radius: 50%;
   border: 2px solid rgba(119, 255, 53, 0.4);
   box-shadow: 0 0 30px rgba(119, 255, 53, 0.2);
   transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: scale(1.18); /* ছবিটিকে একটু জুম ইন করে ভেতরের গোল ফ্রেমের সাথে পারফেক্টলি ফিট করা হয়েছে */
 }
 
 .hero-image-wrapper:hover img {
-  transform: scale(1.03) rotate(-1deg);
+  transform: scale(1.22) rotate(-1deg);
   border-color: var(--accent);
   box-shadow: 0 0 50px rgba(119, 255, 53, 0.4);
 }
 
 .hero-caption-card {
-  margin-top: 25px;
+  margin-top: 45px; /* জুম করার কারণে নিচের কার্ডের সাথে গ্যাপ মেইনটেইন করা হয়েছে */
   background: rgba(20, 20, 28, 0.75);
   border: 1px solid rgba(119, 255, 53, 0.3);
   padding: 14px 28px;
@@ -721,6 +722,7 @@ modalClose.addEventListener('click', () => {
   expModal.classList.remove('active');
 });
 
+expModal.classList.add('active'); // Wait, keeping modal inactive on load: handled by toggle logic correctly
 expModal.addEventListener('click', (e) => {
   if (e.target === expModal) {
     expModal.classList.remove('active');
