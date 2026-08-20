@@ -138,10 +138,10 @@ h1 em{font-style:normal;color:var(--accent); text-shadow:0 0 20px rgba(119,255,5
 
 .hero-image-wrapper img {
   width: 100%;
-  max-width: 410px; /* সামান্য বাড়িয়ে সাইজ পারফেক্ট করা হয়েছে */
+  max-width: 410px;
   height: 410px;
   object-fit: cover;
-  transform: scale(1.06); /* পিকচারটি সার্কেলের ভেতরে একদম সামান্য জুম-ইন করা হলো */
+  transform: scale(1.06); /* পিকচারটি সার্কেলের ভেতরে একদম সামান্য জুম-ইন করা */
   object-position: center center;
   border-radius: 50%;
   border: 4px solid rgba(119, 255, 53, 0.6);
@@ -152,7 +152,7 @@ h1 em{font-style:normal;color:var(--accent); text-shadow:0 0 20px rgba(119,255,5
 .hero-image-wrapper:hover img {
   border-color: var(--accent);
   box-shadow: 0 0 50px rgba(119, 255, 53, 0.5);
-  transform: scale(1.09); /* হোভার করলে হালকা জুম এফেক্ট */
+  transform: scale(1.09);
 }
 
 .hero-caption-card {
@@ -723,7 +723,6 @@ modalClose.addEventListener('click', () => {
   expModal.classList.remove('active');
 });
 
-expModal.classList.add('active'); // Wait, keeping modal logic intact
 expModal.addEventListener('click', (e) => {
   if (e.target === expModal) {
     expModal.classList.remove('active');
