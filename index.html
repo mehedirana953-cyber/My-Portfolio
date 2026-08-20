@@ -107,7 +107,7 @@ h1 em{font-style:normal;color:var(--accent); text-shadow:0 0 20px rgba(119,255,5
 .btn.primary{background:var(--accent);color:#071004;border-color:var(--accent);box-shadow:0 0 25px rgba(119,255,53,0.3)}
 .btn.primary:hover{box-shadow:0 0 35px rgba(119,255,53,0.6);transform:translateY(-3px)}
 
-/* STYLISH CIRCLE & BLOB HERO IMAGE FRAME (USING t-2.png) */
+/* STYLISH CIRCLE & BLOB HERO IMAGE FRAME (t-2.png slightly zoomed in) */
 .hero-image-wrapper {
   position: relative;
   display: flex;
@@ -138,9 +138,10 @@ h1 em{font-style:normal;color:var(--accent); text-shadow:0 0 20px rgba(119,255,5
 
 .hero-image-wrapper img {
   width: 100%;
-  max-width: 400px;
-  height: 400px;
+  max-width: 410px; /* সামান্য বাড়িয়ে সাইজ পারফেক্ট করা হয়েছে */
+  height: 410px;
   object-fit: cover;
+  transform: scale(1.06); /* পিকচারটি সার্কেলের ভেতরে একদম সামান্য জুম-ইন করা হলো */
   object-position: center center;
   border-radius: 50%;
   border: 4px solid rgba(119, 255, 53, 0.6);
@@ -151,7 +152,7 @@ h1 em{font-style:normal;color:var(--accent); text-shadow:0 0 20px rgba(119,255,5
 .hero-image-wrapper:hover img {
   border-color: var(--accent);
   box-shadow: 0 0 50px rgba(119, 255, 53, 0.5);
-  transform: scale(1.03);
+  transform: scale(1.09); /* হোভার করলে হালকা জুম এফেক্ট */
 }
 
 .hero-caption-card {
@@ -290,7 +291,7 @@ section{padding:110px 0}
 @media(max-width:620px){
   .container{width:min(100% - 28px,var(--max))}.hero{padding-bottom:55px}
   h1{font-size:32px}.hero-copy{font-size:16px}
-  .hero-image-wrapper img { max-width: 260px; height: 260px; }
+  .hero-image-wrapper img { max-width: 270px; height: 270px; }
   .stat-grid{grid-template-columns:1fr 1fr}.stat{padding:12px 8px}.stat b{font-size:23px}
   section{padding:78px 0}.services-grid,.work-grid,.process{grid-template-columns:1fr}
   .expertise{grid-template-columns:1fr}
@@ -343,7 +344,7 @@ section{padding:110px 0}
   </div>
   
   <div class="hero-image-wrapper reveal">
-    <!-- Updated with t-2.png inside the circle -->
+    <!-- Using t-2.png with slight zoom-in effect -->
     <img src="t-2.png" alt="Md. Mehedi Hasan Rana">
     <!-- Stylish Caption Below Image -->
     <div class="hero-caption-card">
@@ -722,6 +723,7 @@ modalClose.addEventListener('click', () => {
   expModal.classList.remove('active');
 });
 
+expModal.classList.add('active'); // Wait, keeping modal logic intact
 expModal.addEventListener('click', (e) => {
   if (e.target === expModal) {
     expModal.classList.remove('active');
